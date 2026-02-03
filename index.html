@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dezheng Lu - 个人作品集</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #777;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+        
+        .btn-danger {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-success {
+            background-color: #2ecc71;
+        }
+        
+        /* 导航栏样式 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        /* 首页/关于我部分 */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 10rem 0 8rem;
+            margin-top: 70px;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+        }
+        
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+        
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .tag:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* 关于我部分 */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            max-height: 400px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        .profile-placeholder {
+            width: 100%;
+            max-width: 350px;
+            height: 400px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            cursor: pointer;
+        }
+        
+        .profile-placeholder i {
+            font-size: 80px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .profile-placeholder p {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* 教育部分 */
+        .education {
+            background-color: #f5f7fa;
+        }
+        
+        .education-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .education-date {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        /* 技能部分 */
+        .skills {
+            background-color: white;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-item {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .skill-item h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+        
+        /* 目标部分 */
+        .goals {
+            background-color: #f5f7fa;
+        }
+        
+        .goals-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+        
+        .goal-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .goal-item h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .goal-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+        
+        .goal-list {
+            list-style-type: none;
+        }
+        
+        .goal-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .goal-list li:before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        /* 学术作品部分 */
+        .academic {
+            background-color: white;
+        }
+        
+        .artifact {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .artifact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .artifact-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* 专业经验部分 */
+        .experience {
+            background-color: #f5f7fa;
+        }
+        
+        .experience-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-company {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        /* 联系部分 */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+
+        
+        .image-upload-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .image-preview {
+            max-width: 200px;
+            margin: 1rem auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .section-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-option {
+            padding: 1rem 1.5rem;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .section-option.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .profile-placeholder {
+                max-width: 300px;
+                height: 350px;
+            }
+            
+            .goals-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 8rem 0 6rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .profile-placeholder {
+                max-width: 250px;
+                height: 300px;
+            }
+            
+            .profile-placeholder i {
+                font-size: 60px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-placeholder {
+                max-width: 200px;
+                height: 250px;
+            }
+            
+            .profile-placeholder i {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 主网站内容 -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Dezheng Lu</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#goals">Goals</a></li>
+                    <li><a href="#academic">Academic Work</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首页/关于我 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <img src="./个人头像.jpg" alt="Dezheng Lu's profile photo" class="profile-img" id="heroProfileImg">
+            <h1 id="heroTitle">Hello, I'm Dezheng Lu</h1>
+            <p id="heroSubtitle">Fisher College Management student, expected to graduate in May 2027. I am passionate about business and management, dedicated to combining theory with practice to prepare for future business leadership roles.</p>
+            <a href="#about" class="btn">Learn More</a>
+            
+            <div class="tag-cloud" id="tagCloud">
+                <span class="tag">Management</span>
+                <span class="tag">Business Leadership</span>
+                <span class="tag">Bilingual Communication</span>
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Strategic Thinking</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p id="aboutText1">My name is Dezheng Lu. I am currently studying Management at Fisher College and expect to receive my bachelor's degree in May 2027. I chose this major because I hope to fully develop my professional skills and apply what I have learned to my future career.</p>
+                    <p id="aboutText2">I am very interested in business and management, and enjoy watching speeches and interviews of successful business leaders. Through these videos, I have learned different ways of thinking, leadership styles, and decision-making strategies, and often find inspiration and personal resonance from their experiences.</p>
+                    <p id="aboutText3">I look forward to continuing my academic journey and using my management knowledge to grow professionally and contribute to the business field.</p>
+                </div>
+                <div class="about-image">
+                    <div class="profile-placeholder" id="aboutImageContainer">
+                        
+                        <img src="./关于我.png" style="width:300px;" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育 -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2>Education Background</h2>
+            <div class="education-item" id="educationItem">
+                <div class="education-header">
+                    <h3 id="educationSchool">Fisher College - Boston, MA</h3>
+                    <span class="education-date" id="educationDateText">Expected graduation: May 2027</span>
+                </div>
+                <p id="educationDegree"><strong>Bachelor of Science in Management</strong></p>
+                <p id="educationDescription">Focus on organizational behavior, strategic management, and leadership development. Established a solid foundation in management theory and analytical skills through coursework and practical projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能 -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-container" id="skillsListFront">
+                <div class="skill-item">
+                    <h3><i class="fas fa-book skill-icon"></i> Management Theory Knowledge</h3>
+                    <p>My understanding of management theory enables me to analyze organizational structures, leadership styles, and decision-making processes, and apply these concepts to real business situations.</p>
+                </div>
+                <div class="skill-item">
+                    <h3><i class="fas fa-briefcase skill-icon"></i> Practical Experience</h3>
+                    <p>Experience working in a family business has enhanced my problem-solving abilities and provided me with practical understanding of daily operations and management practices.</p>
+                </div>
+                <div class="skill-item">
+                    <h3><i class="fas fa-language skill-icon"></i> Bilingual Ability</h3>
+                    <p>I am proficient in English and Chinese, able to communicate effectively in diverse professional environments and collaborate with people from different cultural backgrounds.</p>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; text-align: center;" id="skillsSummary">These skills enable me to connect theory with practice and prepare for future roles in management and business.</p>
+        </div>
+    </section>
+
+    <!-- 目标 -->
+    <section class="goals" id="goals">
+        <div class="container">
+            <h2>My Goals</h2>
+            <div class="goals-container">
+                <div class="goal-item">
+                    <h3><i class="fas fa-flag goal-icon"></i> Short-term Goals</h3>
+                    <ul class="goal-list" id="shortTermGoalsList">
+                        <li>Achieve A grades in all courses and successfully complete the bachelor's degree</li>
+                        <li>Maintain excellent academic performance while continuing to build a solid management foundation</li>
+                        <li>Seek internship or work opportunities in the United States (if available) to apply management knowledge in a professional environment</li>
+                        <li>Further strengthen practical and problem-solving abilities using my previous work experience</li>
+                    </ul>
+                </div>
+                <div class="goal-item">
+                    <h3><i class="fas fa-mountain goal-icon"></i> Long-term Goals</h3>
+                    <ul class="goal-list" id="longTermGoalsList">
+                        <li>Return to China after graduation to assume a leadership role in the family business</li>
+                        <li>Apply management theories and international perspectives gained from American education to improve business operations</li>
+                        <li>Contribute to the sustainable growth and long-term development of the company</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学术作品 -->
+    <section class="academic" id="academic">
+        <div class="container">
+            <h2>Academic Work</h2>
+            <div class="artifact" id="academicArtifact" style="position: relative;">
+                <div class="artifact-header" id="artifactHeader" onclick="openModal()">
+                    <h3 id="academicTitleText">Zoo Management Case Study <span style="font-size: 14px; color: #666; font-weight: normal;">(Click to view details)</span></h3>
+                    <span class="artifact-date" id="academicDateText">September 14, 2025</span>
+                </div>
+                <p id="academicCourseText">Course: Principles of Management</p>
+                <p id="academicDescriptionText"><strong>Description:</strong> This work is a case study assignment for my Principles of Management course. The task required me to analyze the operational and management problems faced by a zoo experiencing declining attendance and financial challenges. By assuming the role of zoo manager, I identified key organizational issues and proposed multiple strategic solutions. This assignment emphasized the application of core management principles, including planning, decision-making, and evaluating alternatives in real organizational contexts.</p>
+
+
+                 
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业经验 -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-item" id="experienceItem">
+                <div style="display: flex; align-items: center; gap: 30px; margin-bottom: 2rem;">
+                 
+                    <img src="./logo.png" />
+                    <div style="flex: 1;">
+                        <div class="experience-header">
+                            <h3 id="experienceTitleText">Sales and Business Development</h3>
+                            <span class="experience-company" id="experienceCompanyText">Shandong Baoli Technology Co., Ltd.</span>
+                        </div>
+                    </div>
+                </div>
+                <p id="experienceDescriptionText">Shandong Baoli Technology Co., Ltd. is a tire manufacturing company serving both domestic and international markets. In this role, I was responsible for domestic and overseas sales, frequently traveling to different countries to explore markets, attend exhibitions, and communicate with customers. This experience helped me develop a deep understanding of product positioning, market needs, long-term company development direction, as well as internal organizational structure and employee roles.</p>
+                <p id="experienceReflectionText"><strong>Reflection:</strong> This experience allowed me to connect practical business operations with management theories learned in the classroom. Through participation in sales, market development, and internal coordination, I gained a deeper understanding of how management decisions affect product strategy, employee performance, and overall business success. It also strengthened my ability to analyze business situations from both practical and strategic perspectives, preparing me for future leadership roles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p class="section-intro" id="contactIntro">If you are interested in my background or have cooperation intentions, please feel free to contact me through the following methods.</p>
+            
+            <div class="contact-info" id="contactInfo">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Name</h3>
+                    <p id="contactNameText">Dezheng Lu</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p id="contactPhoneText">857-423-0491</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p id="contactEmailText">dlu01@fisher.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <a id="contactInstagramLink" href="https://www.instagram.com/_luuu1128/" target="_blank" style="color: #E1306C; text-decoration: none; font-size: 1.1rem; font-weight: 600;">@_luuu1128</a>
+                    
+                </div>
+            </div>
+            
+            <div class="social-links">
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>Thank you for visiting my portfolio website</p>
+            <p class="copyright">© 2025 Dezheng Lu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 翻译数据
+        const translations = {
+            en: {
+                nav: {
+                    home: "Home",
+                    about: "About",
+                    education: "Education",
+                    skills: "Skills",
+                    goals: "Goals",
+                    academic: "Academic Work",
+                    experience: "Experience",
+                    contact: "Contact"
+                },
+                hero: {
+                    title: "Hello, I'm Dezheng Lu",
+                    subtitle: "Fisher College Management student, expected to graduate in May 2027. I am passionate about business and management, dedicated to combining theory with practice to prepare for future business leadership roles.",
+                    learnMore: "Learn More"
+                },
+                sections: {
+                    about: "About Me",
+                    education: "Education Background",
+                    skills: "My Skills",
+                    goals: "My Goals",
+                    academic: "Academic Work",
+                    experience: "Professional Experience",
+                    contact: "Contact Me"
+                },
+                about: {
+                    placeholder: "Dezheng Lu\nManagement Student\nFisher College"
+                },
+                goals: {
+                    shortTerm: "Short-term Goals",
+                    longTerm: "Long-term Goals"
+                },
+                contact: {
+                    intro: "If you are interested in my background or have cooperation intentions, please feel free to contact me through the following methods.",
+                    name: "Name",
+                    phone: "Phone",
+                    email: "Email",
+                    instagram: "Instagram"
+                },
+                footer: {
+                    thanks: "Thank you for visiting my portfolio website",
+                    copyright: "© 2025 Dezheng Lu. All rights reserved."
+                },
+                admin: {
+                    login: "Admin Login",
+                    username: "Username",
+                    password: "Password",
+                    contentManagement: "Content Management",
+                    logout: "Logout",
+                    saveChanges: "Save Changes",
+                    addNewSkill: "Add New Skill",
+                    edit: "Edit",
+                    delete: "Delete",
+                    imageManagement: "Image Management",
+                    clickToReplace: "Click the following images to replace:",
+                    homeBackground: "Home Background",
+                    profile: "Profile Picture",
+                    aboutImage: "About Me Image",
+                    clickToSelect: "Click to select image or drag image here",
+                    imageSize: "Recommended image size:",
+                    uploadImage: "Upload Image"
+                }
+            },
+            cn: {
+                nav: {
+                    home: "首页",
+                    about: "关于我",
+                    education: "教育",
+                    skills: "技能",
+                    goals: "目标",
+                    academic: "学术作品",
+                    experience: "专业经验",
+                    contact: "联系"
+                },
+                hero: {
+                    title: "你好，我是Dezheng Lu",
+                    subtitle: "Fisher学院管理学学生，预计于2027年5月毕业。我对商业和管理充满热情，致力于将理论与实践相结合，为未来的商业领导角色做好准备。",
+                    learnMore: "了解更多"
+                },
+                sections: {
+                    about: "关于我",
+                    education: "教育背景",
+                    skills: "我的技能",
+                    goals: "我的目标",
+                    academic: "学术作品",
+                    experience: "专业经验",
+                    contact: "联系我"
+                },
+                about: {
+                    placeholder: "Dezheng Lu\n管理学学生\nFisher College"
+                },
+                goals: {
+                    shortTerm: "短期目标",
+                    longTerm: "长期目标"
+                },
+                contact: {
+                    intro: "如果您对我的背景感兴趣或有合作意向，欢迎通过以下方式联系我。",
+                    name: "姓名",
+                    phone: "电话",
+                    email: "邮箱",
+                    instagram: "Instagram"
+                },
+                footer: {
+                    thanks: "感谢访问我的个人作品集网站",
+                    copyright: "© 2025 Dezheng Lu. 保留所有权利。"
+                },
+
+            }
+        };
+
+        // 网站数据存储
+        const websiteData = {
+            about: [
+                "My name is Dezheng Lu. I am currently studying Management at Fisher College and expect to receive my bachelor's degree in May 2027. I chose this major because I hope to fully develop my professional skills and apply what I have learned to my future career.",
+                "I am very interested in business and management, and enjoy watching speeches and interviews of successful business leaders. Through these videos, I have learned different ways of thinking, leadership styles, and decision-making strategies, and often find inspiration and personal resonance from their experiences.",
+                "I look forward to continuing my academic journey and using my management knowledge to grow professionally and contribute to the business field."
+            ],
+            academicDocument: {
+                title: "Zoo Management Case Study",
+                date: "September 14, 2025",
+                course: "Principles of Management",
+                content: `# Zoo Management Case Study
+
+## Abstract
+This case study analyzes the operational and management problems faced by a zoo experiencing declining attendance and financial challenges. By assuming the role of zoo manager, key organizational issues were identified and multiple strategic solutions were proposed.
+
+## Problem Identification
+1. Continuous decline in visitor numbers, leading to reduced revenue
+2. Rising operating costs, worsening financial situation
+3. Low employee morale, declining service quality
+
+## Solutions
+1. Develop new marketing strategies to attract more visitors
+2. Optimize operational processes to reduce costs
+3. Implement employee training programs to improve service quality`
+            },
+            education: {
+                school: "Fisher College - Boston, MA",
+                date: "Expected graduation: May 2027",
+                degree: "Bachelor of Science in Management",
+                description: "Focus on organizational behavior, strategic management, and leadership development. Established a solid foundation in management theory and analytical skills through coursework and practical projects."
+            },
+            skills: [
+                { title: "Management Theory Knowledge", description: "My understanding of management theory enables me to analyze organizational structures, leadership styles, and decision-making processes, and apply these concepts to real business situations." },
+                { title: "Practical Experience", description: "Experience working in a family business has enhanced my problem-solving abilities and provided me with practical understanding of daily operations and management practices." },
+                { title: "Bilingual Ability", description: "I am proficient in English and Chinese, able to communicate effectively in diverse professional environments and collaborate with people from different cultural backgrounds." }
+            ],
+            goals: {
+                shortTerm: [
+                    "Achieve A grades in all courses and successfully complete the bachelor's degree",
+                    "Maintain excellent academic performance while continuing to build a solid management foundation",
+                    "Seek internship or work opportunities in the United States (if available) to apply management knowledge in a professional environment",
+                    "Further strengthen practical and problem-solving abilities using my previous work experience"
+                ],
+                longTerm: [
+                    "Return to China after graduation to assume a leadership role in the family business",
+                    "Apply management theories and international perspectives gained from American education to improve business operations",
+                    "Contribute to the sustainable growth and long-term development of the company"
+                ]
+            },
+            academic: {
+                title: "Zoo Management Case Study",
+                date: "September 14, 2025",
+                course: "Principles of Management",
+                description: "This work is a case study assignment for my Principles of Management course. The task required me to analyze the operational and management problems faced by a zoo experiencing declining attendance and financial challenges. By assuming the role of zoo manager, I identified key organizational issues and proposed multiple strategic solutions. This assignment emphasized the application of core management principles, including planning, decision-making, and evaluating alternatives in real organizational contexts.",
+                reflection: "This work demonstrates my ability to apply management theory to practical situations and think from a manager's perspective. Through this case, I learned how management decisions must balance short-term performance with long-term organizational sustainability. This process strengthened my analytical thinking and problem-solving abilities, and helped me better understand how effective management strategies can improve organizational outcomes. This experience directly supports my academic development in management and my long-term goal of pursuing leadership roles in the business field."
+            },
+            experience: {
+                title: "Sales and Business Development",
+                company: "Shandong Baoli Technology Co., Ltd.",
+                description: "Shandong Baoli Technology Co., Ltd. is a tire manufacturing company serving both domestic and international markets. In this role, I was responsible for domestic and overseas sales, frequently traveling to different countries to explore markets, attend exhibitions, and communicate with customers. This experience helped me develop a deep understanding of product positioning, market needs, long-term company development direction, as well as internal organizational structure and employee roles.",
+                reflection: "This experience allowed me to connect practical business operations with management theories learned in the classroom. Through participation in sales, market development, and internal coordination, I gained a deeper understanding of how management decisions affect product strategy, employee performance, and overall business success. It also strengthened my ability to analyze business situations from both practical and strategic perspectives, preparing me for future leadership roles."
+            },
+            contact: {
+                name: "Dezheng Lu",
+                phone: "857-423-0491",
+                email: "dlu01@fisher.com",
+                instagram: "_luuu1128"
+            },
+            images: {
+                hero: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+                profile: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                about: "",
+                companyLogo: ""
+            }
+        };
+
+        // 深合并对象
+        function deepMerge(target, source) {
+            for (const key in source) {
+                if (source.hasOwnProperty(key)) {
+                    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+                        if (!target[key]) {
+                            target[key] = {};
+                        }
+                        deepMerge(target[key], source[key]);
+                    } else {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        // 从本地存储加载数据
+        function loadDataFromStorage() {
+            try {
+                // 检查localStorage是否可用
+                if (typeof Storage !== 'undefined') {
+                    // 尝试获取数据
+                    const savedData = localStorage.getItem('portfolioData');
+                    console.log('从localStorage获取数据:', savedData ? '成功' : '失败');
+                    
+                    if (savedData) {
+                        // 尝试解析数据
+                        try {
+                            const parsedData = JSON.parse(savedData);
+                            console.log('解析数据成功');
+                            
+                            // 使用深合并数据，保留默认值
+                            deepMerge(websiteData, parsedData);
+                            console.log('合并数据成功');
+                            
+                            // 验证图片数据是否存在
+                            if (websiteData.images) {
+                                console.log('图片数据存在:', {
+                                    hero: !!websiteData.images.hero,
+                                    profile: !!websiteData.images.profile,
+                                    about: !!websiteData.images.about,
+                                    companyLogo: !!websiteData.images.companyLogo
+                                });
+                            }
+                        } catch (parseError) {
+                            console.error('解析localStorage数据时出错:', parseError);
+                            showMessage('加载数据失败，使用默认数据!', 'error');
+                        }
+                    } else {
+                        console.log('localStorage中没有数据，使用默认数据');
+                    }
+                } else {
+                    console.log('localStorage不可用，使用默认数据');
+                }
+            } catch (error) {
+                console.error('从localStorage加载数据时出错:', error);
+                showMessage('加载数据失败，使用默认数据!', 'error');
+            }
+        }
+
+        // 保存数据到本地存储
+        function saveDataToStorage() {
+            try {
+                // 检查localStorage是否可用
+                if (typeof Storage !== 'undefined') {
+                    // 检查数据大小
+                    const dataString = JSON.stringify(websiteData);
+                    console.log('保存的数据大小:', (dataString.length / 1024 / 1024).toFixed(2), 'MB');
+                    
+                    // 尝试保存数据
+                    localStorage.setItem('portfolioData', dataString);
+                    console.log('数据保存成功');
+                    
+                    // 验证保存是否成功
+                    const savedData = localStorage.getItem('portfolioData');
+                    if (savedData) {
+                        console.log('数据验证成功');
+                    } else {
+                        console.log('数据验证失败');
+                    }
+                } else {
+                    console.log('localStorage不可用');
+                }
+            } catch (error) {
+                console.error('保存数据到localStorage时出错:', error);
+                showMessage('保存数据失败，请检查浏览器存储空间!', 'error');
+            }
+        }
+
+        // 初始化页面内容
+        function initPageContent() {
+            // 关于我
+            document.getElementById('aboutText1').textContent = websiteData.about[0];
+            document.getElementById('aboutText2').textContent = websiteData.about[1];
+            document.getElementById('aboutText3').textContent = websiteData.about[2];
+            
+            // 教育
+            document.getElementById('educationSchool').textContent = websiteData.education.school;
+            document.getElementById('educationDateText').textContent = websiteData.education.date;
+            document.getElementById('educationDegree').innerHTML = `<strong>${websiteData.education.degree}</strong>`;
+            document.getElementById('educationDescription').textContent = websiteData.education.description;
+            
+            // 技能
+            renderSkills();
+            
+            // 目标
+            renderGoals();
+            
+            // 学术作品
+            document.getElementById('academicTitleText').textContent = websiteData.academic.title;
+            document.getElementById('academicDateText').textContent = websiteData.academic.date;
+            // 根据当前语言设置课程内容
+            if (currentLang === 'en') {
+                document.getElementById('academicCourseText').textContent = "Course: Principles of Management";
+                document.getElementById('academicDescriptionText').textContent = "Description: This work is a case study assignment for my Principles of Management course. The task required me to analyze the operational and management problems faced by a zoo experiencing declining attendance and financial challenges. By assuming the role of zoo manager, I identified key organizational issues and proposed multiple strategic solutions. This assignment emphasized the application of core management principles, including planning, decision-making, and evaluating alternatives in real organizational contexts.";
+                document.getElementById('academicReflectionText').textContent = "Reflection: This work demonstrates my ability to apply management theory to practical situations and think from a manager's perspective. Through this case, I learned how management decisions must balance short-term performance with long-term organizational sustainability. This process strengthened my analytical thinking and problem-solving abilities, and helped me better understand how effective management strategies can improve organizational outcomes. This experience directly supports my academic development in management and my long-term goal of pursuing leadership roles in the business field.";
+            } else {
+                document.getElementById('academicCourseText').textContent = `Course: ${websiteData.academic.course}`;
+                document.getElementById('academicDescriptionText').textContent = `Description: ${websiteData.academic.description}`;
+                document.getElementById('academicReflectionText').textContent = `Reflection: ${websiteData.academic.reflection}`;
+            }
+            
+            // 专业经验
+            document.getElementById('experienceTitleText').textContent = websiteData.experience.title;
+            document.getElementById('experienceCompanyText').textContent = websiteData.experience.company;
+            document.getElementById('experienceDescriptionText').textContent = websiteData.experience.description;
+            document.getElementById('experienceReflectionText').textContent = `Reflection: ${websiteData.experience.reflection}`;
+            
+            // 联系信息
+            document.getElementById('contactNameText').textContent = websiteData.contact.name;
+            document.getElementById('contactPhoneText').textContent = websiteData.contact.phone;
+            document.getElementById('contactEmailText').textContent = websiteData.contact.email;
+            
+            // Instagram
+            if (websiteData.contact.instagram) {
+                const instagramHandle = websiteData.contact.instagram;
+                document.getElementById('contactInstagramLink').href = `https://www.instagram.com/${instagramHandle}/`;
+                document.getElementById('contactInstagramLink').textContent = `@${instagramHandle}`;
+            }
+            
+            // 学术文档内容
+            updateAcademicDocument();
+            
+            // 图片
+            console.log('初始化图片数据:', {
+                hero: !!websiteData.images.hero,
+                profile: !!websiteData.images.profile,
+                about: !!websiteData.images.about,
+                companyLogo: !!websiteData.images.companyLogo
+            });
+            
+            if (websiteData.images.profile) {
+                console.log('加载个人头像图片');
+                document.getElementById('heroProfileImg').src = websiteData.images.profile;
+            } else {
+                console.log('个人头像图片不存在，使用默认图片');
+            }
+            
+            if (websiteData.images.about) {
+                console.log('加载关于我图片');
+                const aboutImageContainer = document.getElementById('aboutImageContainer');
+                aboutImageContainer.innerHTML = `<img src="${websiteData.images.about}" alt="Dezheng Lu的个人照片" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`;
+            } else {
+                console.log('关于我图片不存在，使用默认样式');
+            }
+            
+            if (websiteData.images.hero) {
+                console.log('加载首页背景图片');
+                const heroSection = document.querySelector('.hero');
+                heroSection.style.background = `linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('${websiteData.images.hero}')`;
+                heroSection.style.backgroundSize = 'cover';
+                heroSection.style.backgroundPosition = 'center';
+            } else {
+                console.log('首页背景图片不存在，使用默认背景');
+            }
+            
+            if (websiteData.images.companyLogo) {
+                console.log('加载公司标志图片');
+                const companyLogoImg = document.getElementById('companyLogoImg');
+                const companyLogoIcon = document.querySelector('#companyLogoContainer i');
+                companyLogoImg.src = websiteData.images.companyLogo;
+                companyLogoImg.style.display = 'block';
+                companyLogoIcon.style.display = 'none';
+            } else {
+                console.log('公司标志图片不存在，使用默认图标');
+            }
+        }
+
+        // 渲染技能列表
+        function renderSkills() {
+            const skillsListFront = document.getElementById('skillsListFront');
+            skillsListFront.innerHTML = '';
+            
+            websiteData.skills.forEach((skill, index) => {
+                const skillItem = document.createElement('div');
+                skillItem.className = 'skill-item';
+                skillItem.innerHTML = `
+                    <h3><i class="fas fa-${getSkillIcon(skill.title)} skill-icon"></i> ${skill.title}</h3>
+                    <p>${skill.description}</p>
+                `;
+                skillsListFront.appendChild(skillItem);
+            });
+        }
+
+        // 获取技能图标
+        function getSkillIcon(title) {
+            if (title.includes('理论')) return 'book';
+            if (title.includes('实践')) return 'briefcase';
+            if (title.includes('双语')) return 'language';
+            return 'star';
+        }
+
+        // 渲染目标列表
+        function renderGoals() {
+            const shortTermList = document.getElementById('shortTermGoalsList');
+            const longTermList = document.getElementById('longTermGoalsList');
+            
+            shortTermList.innerHTML = '';
+            longTermList.innerHTML = '';
+            
+            websiteData.goals.shortTerm.forEach(goal => {
+                const li = document.createElement('li');
+                li.textContent = goal;
+                shortTermList.appendChild(li);
+            });
+            
+            websiteData.goals.longTerm.forEach(goal => {
+                const li = document.createElement('li');
+                li.textContent = goal;
+                longTermList.appendChild(li);
+            });
+        }
+        
+        // 更新学术文档内容
+        function updateAcademicDocument() {
+            // 显示动物园扩建计划文章内容
+            const content = `
+               
+            `;
+            
+            document.getElementById('academicDocumentContent').innerHTML = content;
+            
+            // 更新文档头部标题
+            const docHeader = document.querySelector('.document-header h4');
+            if (docHeader) {
+                docHeader.textContent = 'Riverside City Zoo Expansion Plan';
+            }
+        }
+        
+        // 学术作品悬停效果 - 右侧固定位置
+        function initAcademicHover() {
+            console.log('Initializing academic hover effect...');
+            const academicArtifact = document.getElementById('academicArtifact');
+            const academicPopup = document.getElementById('academicPopup');
+            
+            console.log('Elements found:', {
+                academicArtifact: !!academicArtifact,
+                academicPopup: !!academicPopup
+            });
+            
+            if (academicArtifact && academicPopup) {
+                console.log('Adding event listeners...');
+                
+                // 预先设置弹出窗口的基本样式 - 固定在右侧
+                academicPopup.style.position = 'fixed';
+                academicPopup.style.top = '50%';
+                academicPopup.style.right = '20px';
+                academicPopup.style.transform = 'translateY(-50%) translateX(100%)';
+                academicPopup.style.width = '600px';
+                academicPopup.style.maxWidth = '80vw';
+                academicPopup.style.maxHeight = '80vh';
+                academicPopup.style.background = 'white';
+                academicPopup.style.borderRadius = '8px';
+                academicPopup.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+                academicPopup.style.zIndex = '1000';
+                academicPopup.style.overflow = 'hidden';
+                academicPopup.style.border = '1px solid #e0e0e0';
+                academicPopup.style.display = 'none';
+                academicPopup.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                
+                academicArtifact.addEventListener('mouseenter', function() {
+                    console.log('Mouse entered academic artifact');
+                    
+                    academicPopup.style.display = 'block';
+                    academicPopup.style.opacity = '0';
+                    academicPopup.style.transform = 'translateY(-50%) translateX(100%)';
+                    
+                    setTimeout(() => {
+                        academicPopup.style.opacity = '1';
+                        academicPopup.style.transform = 'translateY(-50%) translateX(0)';
+                    }, 10);
+                });
+                
+                academicArtifact.addEventListener('mouseleave', function() {
+                    console.log('Mouse left academic artifact');
+                    academicPopup.style.opacity = '0';
+                    academicPopup.style.transform = 'translateY(-50%) translateX(100%)';
+                    
+                    setTimeout(() => {
+                        academicPopup.style.display = 'none';
+                    }, 300);
+                });
+            } else {
+                console.error('Could not find academic artifact or popup elements');
+            }
+        }
+
+
+
+        // 当前语言
+        let currentLang = 'en';
+
+        // 语言切换函数
+        function changeLanguage(lang) {
+            console.log('开始执行changeLanguage函数，目标语言：', lang);
+            currentLang = lang;
+            
+            // 更新导航栏
+            document.querySelectorAll('.nav-links a').forEach((link, index) => {
+                const navItems = ['home', 'about', 'education', 'skills', 'goals', 'academic', 'experience', 'contact'];
+                link.textContent = translations[lang].nav[navItems[index]];
+            });
+            
+            // 更新首页内容
+            document.getElementById('heroTitle').textContent = translations[lang].hero.title;
+            document.getElementById('heroSubtitle').textContent = translations[lang].hero.subtitle;
+            document.querySelector('.hero a.btn').textContent = translations[lang].hero.learnMore;
+            
+            // 更新各个部分标题
+            document.querySelectorAll('section h2').forEach((heading, index) => {
+                const sections = ['about', 'education', 'skills', 'goals', 'academic', 'experience', 'contact'];
+                heading.textContent = translations[lang].sections[sections[index]];
+            });
+            
+            // 更新关于我内容
+            const aboutTexts = [
+                lang === 'en' ? "My name is Dezheng Lu. I am currently studying Management at Fisher College and expect to receive my bachelor's degree in May 2027. I chose this major because I hope to fully develop my professional skills and apply what I have learned to my future career." : "我的名字是Dezheng Lu。我目前在Fisher学院学习管理学，预计于2027年5月获得学士学位。我选择这个专业是因为我希望充分发展我的专业技能，并将所学知识应用于未来的职业生涯。",
+                lang === 'en' ? "I am very interested in business and management, and enjoy watching speeches and interviews of successful business leaders. Through these videos, I have learned different ways of thinking, leadership styles, and decision-making strategies, and often find inspiration and personal resonance from their experiences." : "我对商业和管理非常感兴趣，喜欢观看成功商业领袖的演讲和采访。通过这些视频，我学习了不同的思维方式、领导风格和决策策略，并经常从他们的经验中找到灵感和个人共鸣。",
+                lang === 'en' ? "I look forward to continuing my academic journey and using my management knowledge to grow professionally and contribute to the business field." : "我期待继续我的学术之旅，并利用我的管理知识在专业上成长，为商业领域做出贡献。"
+            ];
+            document.getElementById('aboutText1').textContent = aboutTexts[0];
+            document.getElementById('aboutText2').textContent = aboutTexts[1];
+            document.getElementById('aboutText3').textContent = aboutTexts[2];
+            
+            // 更新教育内容
+            // 直接更新各个元素的内容，不使用任何调试信息或元素存在性检查
+            document.getElementById('educationSchool').textContent = lang === 'en' ? "Fisher College - Boston, MA" : "Fisher College - Boston, MA";
+            document.getElementById('educationDateText').textContent = lang === 'en' ? "Expected graduation: May 2027" : "预计毕业: 2027年5月";
+            document.getElementById('educationDegree').innerHTML = lang === 'en' ? "<strong>Bachelor of Science in Management</strong>" : "<strong>管理学学士</strong>";
+            document.getElementById('educationDescription').textContent = lang === 'en' ? "Focus on organizational behavior, strategic management, and leadership development. Established a solid foundation in management theory and analytical skills through coursework and practical projects." : "专注于组织行为学、战略管理和领导力发展。通过课程学习和实践项目，建立了扎实的管理理论基础和分析能力。";
+            
+            // 更新技能内容
+            const skillsListFront = document.getElementById('skillsListFront');
+            skillsListFront.innerHTML = '';
+            const skills = lang === 'en' ? [
+                { title: "Management Theory Knowledge", description: "My understanding of management theory enables me to analyze organizational structures, leadership styles, and decision-making processes, and apply these concepts to real business situations." },
+                { title: "Practical Experience", description: "Experience working in a family business has enhanced my problem-solving abilities and provided me with practical understanding of daily operations and management practices." },
+                { title: "Bilingual Ability", description: "I am proficient in English and Chinese, able to communicate effectively in diverse professional environments and collaborate with people from different cultural backgrounds." }
+            ] : [
+                { title: "管理理论知识", description: "我对管理理论的理解使我能够分析组织结构、领导风格和决策过程，并将这些概念应用于实际的商业情境中。" },
+                { title: "实践经验", description: "在家族企业工作的经历增强了我的问题解决能力，并让我对日常运营和管理实践有了实际的了解。" },
+                { title: "双语能力", description: "我精通英语和中文，能够在多元化的专业环境中有效沟通，并与来自不同文化背景的人合作。" }
+            ];
+            skills.forEach((skill, index) => {
+                const skillItem = document.createElement('div');
+                skillItem.className = 'skill-item';
+                skillItem.innerHTML = `
+                    <h3><i class="fas fa-${getSkillIcon(skill.title)} skill-icon"></i> ${skill.title}</h3>
+                    <p>${skill.description}</p>
+                `;
+                skillsListFront.appendChild(skillItem);
+            });
+            document.getElementById('skillsSummary').textContent = lang === 'en' ? "These skills enable me to connect theory with practice and prepare for future roles in management and business." : "这些技能使我能够连接理论与实践，为未来在管理和商业领域的角色做好准备。";
+            
+            // 更新目标内容
+            document.querySelector('.goal-item:nth-child(1) h3').textContent = lang === 'en' ? "Short-term Goals" : "短期目标";
+            document.querySelector('.goal-item:nth-child(2) h3').textContent = lang === 'en' ? "Long-term Goals" : "长期目标";
+            
+            const shortTermList = document.getElementById('shortTermGoalsList');
+            const longTermList = document.getElementById('longTermGoalsList');
+            shortTermList.innerHTML = '';
+            longTermList.innerHTML = '';
+            
+            const shortTermGoals = lang === 'en' ? [
+                "Achieve A grades in all courses and successfully complete the bachelor's degree",
+                "Maintain excellent academic performance while continuing to build a solid management foundation",
+                "Seek internship or work opportunities in the United States (if available) to apply management knowledge in a professional environment",
+                "Further strengthen practical and problem-solving abilities using my previous work experience"
+            ] : [
+                "在所有课程中获得A等成绩，并成功完成学士学位",
+                "保持优异的学术表现，同时继续建立坚实的管理基础",
+                "在美国寻找实习或工作机会（如果可用），在专业环境中应用管理知识",
+                "利用我之前的工作经验进一步加强实践和问题解决能力"
+            ];
+            
+            const longTermGoals = lang === 'en' ? [
+                "Return to China after graduation to assume a leadership role in the family business",
+                "Apply management theories and international perspectives gained from American education to improve business operations",
+                "Contribute to the sustainable growth and long-term development of the company"
+            ] : [
+                "毕业后返回中国，在家族企业中担任领导角色",
+                "应用从美国教育中获得的管理理论和国际视野来改进业务运营",
+                "为公司的可持续增长和长期发展做出贡献"
+            ];
+            
+            shortTermGoals.forEach(goal => {
+                const li = document.createElement('li');
+                li.textContent = goal;
+                shortTermList.appendChild(li);
+            });
+            
+            longTermGoals.forEach(goal => {
+                const li = document.createElement('li');
+                li.textContent = goal;
+                longTermList.appendChild(li);
+            });
+            
+            // 更新学术作品内容
+            document.getElementById('academicTitleText').textContent = lang === 'en' ? "Zoo Management Case Study" : "动物园管理案例研究";
+            document.getElementById('academicDateText').textContent = lang === 'en' ? "September 14, 2025" : "2025年9月14日";
+            document.getElementById('academicCourseText').textContent = lang === 'en' ? "Course: Principles of Management" : "课程: 管理学原理";
+            document.getElementById('academicDescriptionText').textContent = lang === 'en' ? "Description: This work is a case study assignment for my Principles of Management course. The task required me to analyze the operational and management problems faced by a zoo experiencing declining attendance and financial challenges. By assuming the role of zoo manager, I identified key organizational issues and proposed multiple strategic solutions. This assignment emphasized the application of core management principles, including planning, decision-making, and evaluating alternatives in real organizational contexts." : "描述: 这个作品是我管理学原理课程的一个案例研究作业。任务要求我分析一个面临参观人数下降和财务挑战的动物园所面临的操作和管理问题。通过扮演动物园经理的角色，我识别了关键的组织问题并提出了多个战略解决方案。这个作业强调了核心管理原则的应用，包括在实际组织情境中的规划、决策和评估替代方案。";
+            document.getElementById('academicReflectionText').textContent = lang === 'en' ? "Reflection: This work demonstrates my ability to apply management theory to practical situations and think from a manager's perspective. Through this case, I learned how management decisions must balance short-term performance with long-term organizational sustainability. This process strengthened my analytical thinking and problem-solving abilities, and helped me better understand how effective management strategies can improve organizational outcomes. This experience directly supports my academic development in management and my long-term goal of pursuing leadership roles in the business field." : "反思: 这个作品展示了我将管理理论应用于实际情况并从管理者角度思考的能力。通过这个案例，我学习了管理决策必须如何平衡短期绩效与长期组织可持续性。这个过程加强了我的分析思维和问题解决能力，并帮助我更好地理解有效的管理策略如何改善组织成果。这个经验直接支持了我在管理学方面的学术发展以及我在商业领域追求领导角色的长期目标。";
+            
+            // 更新专业经验内容
+            document.getElementById('experienceTitleText').textContent = lang === 'en' ? "Sales and Business Development" : "销售与业务发展";
+            document.getElementById('experienceCompanyText').textContent = lang === 'en' ? "Shandong Baoli Technology Co., Ltd." : "山东宝利科技有限公司";
+            document.getElementById('experienceDescriptionText').textContent = lang === 'en' ? "Shandong Baoli Technology Co., Ltd. is a tire manufacturing company serving both domestic and international markets. In this role, I was responsible for domestic and overseas sales, frequently traveling to different countries to explore markets, attend exhibitions, and communicate with customers. This experience helped me develop a deep understanding of product positioning, market needs, long-term company development direction, as well as internal organizational structure and employee roles." : "山东宝利科技有限公司是一家服务于国内外市场的轮胎制造公司。在这个角色中，我负责国内和海外销售，经常前往不同国家探索市场、参加展览并与客户沟通。这个经验帮助我建立了对产品定位、市场需求和公司长期发展方向以及内部组织结构和员工角色的深刻理解。";
+            document.getElementById('experienceReflectionText').textContent = lang === 'en' ? "Reflection: This experience allowed me to connect practical business operations with management theories learned in the classroom. Through participation in sales, market development, and internal coordination, I gained a deeper understanding of how management decisions affect product strategy, employee performance, and overall business success. It also strengthened my ability to analyze business situations from both practical and strategic perspectives, preparing me for future leadership roles." : "反思: 这个经验让我能够将实际的商业运营与课堂上学到的管理理论联系起来。通过参与销售、市场开发和内部协调，我对管理决策如何影响产品战略、员工绩效和整体业务成功有了更深入的理解。这也加强了我从实践和战略角度分析商业情况的能力，为未来的领导角色做好了准备。";
+            
+            // 更新联系信息
+            document.getElementById('contactIntro').textContent = translations[lang].contact.intro;
+            document.querySelectorAll('.contact-item h3').forEach((item, index) => {
+                const contactItems = ['name', 'phone', 'email', 'instagram'];
+                item.textContent = translations[lang].contact[contactItems[index]];
+            });
+            
+            // 更新页脚
+            document.querySelector('footer p').textContent = translations[lang].footer.thanks;
+            document.querySelector('.copyright').textContent = translations[lang].footer.copyright;
+            
+            // 更新语言按钮样式
+            document.getElementById('langEn').style.backgroundColor = lang === 'en' ? '#3498db' : '#95a5a6';
+            document.getElementById('langCn').style.backgroundColor = lang === 'cn' ? '#3498db' : '#95a5a6';
+            
+            // 保存语言偏好
+            localStorage.setItem('portfolioLanguage', lang);
+            
+            // 更新学术文档内容
+            updateAcademicDocument();
+        }
+
+        // 语言切换按钮事件
+        document.getElementById('langEn').addEventListener('click', () => changeLanguage('en'));
+        document.getElementById('langCn').addEventListener('click', () => changeLanguage('cn'));
+
+        // 网站原有功能
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.padding = '0';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // 图片点击上传功能
+        document.getElementById('heroProfileImg').addEventListener('click', function() {
+            if (isLoggedIn) {
+                // 如果已登录，直接打开图片管理
+                openAdminModal();
+                // 切换到图片管理标签
+                document.querySelectorAll('.admin-nav-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector('[data-section="images"]').classList.add('active');
+                document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+                document.getElementById('imagesSection').classList.add('active');
+                // 选择个人头像
+                document.querySelectorAll('.section-option').forEach(opt => opt.classList.remove('active'));
+                document.querySelector('[data-img="profile"]').classList.add('active');
+                currentImageType = 'profile';
+            } else {
+                // 如果未登录，打开登录
+                openLoginModal();
+            }
+        });
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDataFromStorage();
+            initPageContent();
+            
+            // 检查是否已登录
+            isLoggedIn = localStorage.getItem('portfolioAdminLoggedIn') === 'true';
+            
+            // 默认显示首页背景图预览
+            const imagePreview = document.getElementById('imagePreview');
+            if (websiteData.images.hero) {
+                imagePreview.src = websiteData.images.hero;
+                imagePreview.style.display = 'block';
+            }
+            
+            // 初始化学术作品悬停效果
+            initAcademicHover();
+        });
+        
+        // 模态框相关代码
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+            document.addEventListener('keydown', handleEscKey); // 添加ESC键监听
+            
+            // 添加模态框背景点击监听器
+            const modal = document.getElementById('modal');
+            modal.addEventListener('click', handleModalBackgroundClick);
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // 恢复背景滚动
+            document.removeEventListener('keydown', handleEscKey); // 移除ESC键监听
+            
+            // 移除模态框背景点击监听器
+            const modal = document.getElementById('modal');
+            modal.removeEventListener('click', handleModalBackgroundClick);
+        }
+
+        // ESC键关闭模态框
+        function handleEscKey(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        }
+
+        // 点击模态框背景关闭
+        function handleModalBackgroundClick(event) {
+            if (event.target === document.getElementById('modal')) {
+                closeModal();
+            }
+        }
+    </script>
+    
+    <!-- 模态框 HTML 结构 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div style="text-align: right; margin-bottom: 10px; font-size: 12px; color: #888; user-select: none;">
+                    Press ESC or click outside to close
+                </div>
+                <p id="academicReflectionText"><strong>Reflection:</strong> This work demonstrates my ability to apply management theory to practical situations and think from a manager's perspective. Through this case, I learned how management decisions must balance short-term performance with long-term organizational sustainability. This process strengthened my analytical thinking and problem-solving abilities, and helped me better understand how effective management strategies can improve organizational outcomes. This experience directly supports my academic development in management and my long-term goal of pursuing leadership roles in the business field.</p>
+                
+
+
+                 <div style="text-align: center; margin-bottom: 25px; border-bottom: 2px solid #2b5797; padding-bottom: 15px;">
+                    <h1 style="color: #2b5797; margin: 0 0 10px 0; font-size: 22px;">Riverside City Zoo Expansion Plan</h1>
+                    <div style="color: #666; font-size: 14px; line-height: 1.8;">
+                        <p style="margin: 5px 0;"><strong>Dezheng Lu</strong></p>
+                        <p style="margin: 5px 0;">Professor Michael Lattanzio</p>
+                        <p style="margin: 5px 0;">MG201</p>
+                        <p style="margin: 5px 0;"><strong>September 14, 2025</strong></p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h2 style="color: #2b5797; border-left: 4px solid #2b5797; padding-left: 10px; margin-bottom: 15px; font-size: 18px;">Objectives/Outcomes</h2>
+                    <p style="color: #333; line-height: 1.6; margin-bottom: 10px;">The primary objective of Riverside City Zoo expansion is to recover tourist attendance in zoo, increase visitor engagement, and make sure its long-term financial stability.</p>
+                    
+                    <div style="margin-left: 20px;">
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>1. Financial Growth:</strong> Increase annual attendance by at least 25% within three years and boost ticket revenue by 30% through introducing new attractions and pricing strategies.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>2. Visitor Experience:</strong> Enhance overall visitor experience by incorporating modern, interactive elements, providing a more immersive and educational environment.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>3. Conservation and Education:</strong> Fully utilize self-advantages of being recognized for conservation programs and school partnerships, creating more interactive learning programs for children.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h2 style="color: #2b5797; border-left: 4px solid #2b5797; padding-left: 10px; margin-bottom: 15px; font-size: 18px;">Premises/Assumptions</h2>
+                    <div style="margin-left: 20px;">
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>1. Public Support:</strong> Government and/or private sponsors are interested in investing this projects and providing a beneficial policies to facilitate the development, and families will be continuously expected to visit the updated zoo.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>2. Economic Stability:</strong> The zoo's budget is stable, we can assume that utilizing stable income and budget can attract new capital injection.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>3. Ethical Transparency:</strong> Animal rights groups will monitor expansion, requiring ethical and transparent practices.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>4. Competition:</strong> Nearby theme parks and entertainment centers will continue to cause competition, but this zoo is unique in this area, and also provide meaningfully educational methods and conservation, which can create a distinct market position.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h2 style="color: #2b5797; border-left: 4px solid #2b5797; padding-left: 10px; margin-bottom: 15px; font-size: 18px;">Alternative Courses of Action AND Evaluation</h2>
+                    
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        <h3 style="color: #2b5797; margin: 0 0 10px 0; font-size: 16px;">Option A: African Safari Exhibit</h3>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 10px;">Develop a new exhibit featuring with giraffes, zebras, and elephants. It would include a new cafe and rest areas to support the new attraction.</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-left: 20px;">
+                            <div><strong style="color: #27ae60;">Pros:</strong> The attraction is strong, iconic animals can boost attendance significantly, and new sponsorship opportunities.</div>
+                            <div><strong style="color: #e74c3c;">Cons:</strong> The cost is very high, land is limited, hiring more professional personnel to take care of them.</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        <h3 style="color: #2b5797; margin: 0 0 10px 0; font-size: 16px;">Option B: Modernize Existing Enclosures</h3>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 10px;">Upgrade existing animal habitat exhibit with interactive features, educational technology, and an immersive style of decoration.</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-left: 20px;">
+                            <div><strong style="color: #27ae60;">Pros:</strong> Lower cost than new construction; improves animal living conditions; fully embody the importance of education.</div>
+                            <div><strong style="color: #e74c3c;">Cons:</strong> The growth rate of tourist numbers is relatively small compared to introducing new animals, and requires temporary closures during upgrades.</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        <h3 style="color: #2b5797; margin: 0 0 10px 0; font-size: 16px;">Option C: Community & Education Center</h3>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 10px;">Build a dedicated education hub with classrooms in which biology and veterinary medicine classes are provided, as well as set up some classrooms with 3D projection to introduce virtual/augmented reality wildlife experiences. This can stimulate children's interest in learning earlier.</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-left: 20px;">
+                            <div><strong style="color: #27ae60;">Pros:</strong> Moderate cost; strengthens conservation and education mission; good for partnerships with schools, parents are more willing spend money to send their children to this zoo.</div>
+                            <div><strong style="color: #e74c3c;">Cons:</strong> It may not be as attractive as introducing new animals, needs additional staffs and new program planning, and financial returns may takes a longer to appear.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h2 style="color: #2b5797; border-left: 4px solid #2b5797; padding-left: 10px; margin-bottom: 15px; font-size: 18px;">Choice of Plan</h2>
+                    <p style="color: #333; line-height: 1.6;">For the short-term goal, I will choice Option B and Option C, because Option B will improve animal welfare and visitor experience, while adding Option C directly supports zoo's conservation and learning goals. This combined approach balances costs, addresses visitor demands, and strengthens the zoo's reputation. However, Option A may be considered as a long-term goal, if everything runs smoothly, funding increase and land available, this zoo can import some larger and iconic animals.</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h2 style="color: #2b5797; border-left: 4px solid #2b5797; padding-left: 10px; margin-bottom: 15px; font-size: 18px;">Supporting plans</h2>
+                    <div style="margin-left: 20px;">
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>Finance:</strong> Apply for public grants, approach local businesses for sponsorship, launch fundraising campaigns related to conservation education, expand memberships.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>HR:</strong> Provide professional development for zookeepers and guides, recruit educators to run programs, and create volunteer opportunities.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>Marketing:</strong> Launch a targeted advertisement and tell people about new zoo and get them to visit, partner with schools and family organizations.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>Operations:</strong> Gradually invest according to funding and personnel, without affecting existing experience during renovation and upgrading process, and taking into account the ability to ensure accessibility for all visitors.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h2 style="color: #2b5797; border-left: 4px solid #2b5797; padding-left: 10px; margin-bottom: 15px; font-size: 18px;">Follow-up Mechanism</h2>
+                    <div style="margin-left: 20px;">
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>Key Performance Indicators (KPI):</strong> Monitor monthly and annual attendance figures, ticket revenue, visitor satisfaction from surveys, and whether the educational project is successfully participated in or not</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>Regular Reviews:</strong> Hold weekly meeting, monthly meeting and quarterly summary to review KPI progress tracking table, and stage evaluation of the project.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>Feedback Loops:</strong> Ensure timely feedback, keep stakeholders in the loop, and make continuous plan adjustment.</p>
+                        <p style="color: #333; line-height: 1.6; margin-bottom: 8px;"><strong>Incentive & penalties:</strong> Use formulating supportive plans to stimulate staffs to achieve goals, and apply penalties if targets are missed as well.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 模态框 CSS 样式 -->
+    <style>
+        /* 模态框背景 */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* 启用滚动，以防内容过多 */
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+        }
+
+        /* 模态框内容区域 */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 减少顶部和底部边距，让弹窗更长 */
+            padding: 25px;
+            border: none;
+            border-radius: 8px;
+            width: 85%; /* 增加宽度 */
+            max-width: 1000px; /* 增加最大宽度 */
+            max-height: 90vh; /* 增加最大高度，让弹窗更长 */
+            overflow-y: auto; /* 当内容过多时启用垂直滚动 */
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: modalFadeIn 0.3s ease-out; /* 添加淡入动画 */
+        }
+
+        /* 关闭按钮 */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            z-index: 1001;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* 模态框主体内容 */
+        .modal-body {
+            margin-top: 20px;
+        }
+
+        /* 淡入动画 */
+        @keyframes modalFadeIn {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* 响应式设计 */
+        @media screen and (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</body>
+</html>
