@@ -540,6 +540,156 @@
             border-color: var(--secondary-color);
         }
         
+        /* 课外学习部分样式 */
+        .learning-out-of-class {
+            background-color: #f5f7fa;
+        }
+        
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .hobby-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .hobby-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hobby-item h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        /* 照片墙样式 */
+        .photo-wall {
+            background-color: white;
+        }
+        
+        .photo-wall-container {
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+            height: 300px;
+        }
+        
+        .photo-wall-track {
+            display: flex;
+            width: calc(300px * 10); /* 10 images */
+            height: 100%;
+        }
+        
+        #photoWallTrack1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: scrollLeft 40s linear infinite;
+            /* 启用硬件加速 */
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        #photoWallTrack2 {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            animation: scrollLeft2 40s linear infinite;
+            /* 启用硬件加速 */
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .photo-item {
+            min-width: 300px;
+            margin-right: 0;
+            /* 启用硬件加速 */
+            transform: translateZ(0);
+            height: 100%;
+        }
+        
+        .square-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            /* 启用硬件加速 */
+            transform: translateZ(0);
+        }
+        
+        .square-photo:hover {
+            transform: scale(1.03) translateZ(0);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes scrollLeft {
+            from {
+                transform: translateX(0) translateZ(0);
+            }
+            to {
+                transform: translateX(-100%) translateZ(0);
+            }
+        }
+        
+        @keyframes scrollLeft2 {
+            from {
+                transform: translateX(0) translateZ(0);
+            }
+            to {
+                transform: translateX(-100%) translateZ(0);
+            }
+        }
+        
+        /* 全屏模态框样式 */
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .fullscreen-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .fullscreen-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .close-fullscreen {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close-fullscreen:hover {
+            opacity: 0.8;
+        }
+        
         /* 响应式设计 */
         @media (max-width: 992px) {
             h1 {
@@ -723,6 +873,113 @@
                 </div>
                 <p id="educationDegree"><strong>Bachelor of Science in Management</strong></p>
                 <p id="educationDescription">Focus on organizational behavior, strategic management, and leadership development. Established a solid foundation in management theory and analytical skills through coursework and practical projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课外学习 -->
+    <section class="learning-out-of-class" id="learning-out-of-class">
+        <div class="container">
+            <h2>Learning Out of Class: Beyond the Books</h2>
+            <div class="learning-out-of-class-content">
+                <p>Beyond academic pursuits, I believe in cultivating a well-rounded life through diverse passions. These activities aren't just hobbies—they're classrooms without walls, teaching me lessons no textbook ever could.</p>
+                
+                <div class="hobbies-grid">
+                    <div class="hobby-item">
+                        <h3>🎱 Pool & Strategy</h3>
+                        <p>The quiet focus of the billiards hall is my meditation. Each shot teaches precision, patience, and geometry in motion. It's not just a game—it's a continuous exercise in calculating angles, anticipating outcomes, and maintaining composure under pressure.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>💪 Fitness & Discipline</h3>
+                        <p>The gym is where I transform intention into action. Whether lifting weights or pushing through cardio, fitness has taught me the profound connection between consistent effort and tangible results. It's a daily reminder that growth often happens outside our comfort zones.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>🌍 Travel & Perspective</h3>
+                        <p>My backpack has carried me through ancient cities and mountain trails alike. Every journey rewrites my understanding of the world—from navigating foreign markets to sharing meals with strangers who become friends. Travel doesn't just show me new places; it shows me new ways of being.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>📸 Photography & Storytelling</h3>
+                        <p>Through my lens, I've learned to see differently. Photography taught me that light has moods, shadows have depth, and every moment holds a story waiting to be framed. From capturing street life in bustling cities to freezing mountain dawns in pixels, I'm collecting visual poems, one click at a time.</p>
+                    </div>
+                </div>
+                
+                <p>These pursuits form my ecosystem of growth: pool sharpens my mind, fitness strengthens my foundation, travel expands my world, and photography deepens my seeing. Together, they remind me that the most important education often happens when you step away from the desk and engage with life directly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 照片墙 -->
+    <section class="photo-wall" id="photo-wall">
+        <div class="container">
+            <h2>Photo Gallery</h2>
+            <div class="photo-wall-container">
+                <!-- 创建两个相同的轨道以实现无缝循环 -->
+                <div style="position: relative; width: 100%; height: 300px;">
+                    <div class="photo-wall-track" id="photoWallTrack1">
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=1" alt="Photo 1" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=2" alt="Photo 2" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=3" alt="Photo 3" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=4" alt="Photo 4" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=5" alt="Photo 5" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=6" alt="Photo 6" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=7" alt="Photo 7" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=8" alt="Photo 8" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=9" alt="Photo 9" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=10" alt="Photo 10" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                    </div>
+                    <div class="photo-wall-track" id="photoWallTrack2">
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=1" alt="Photo 1" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=2" alt="Photo 2" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=3" alt="Photo 3" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=4" alt="Photo 4" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=5" alt="Photo 5" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=6" alt="Photo 6" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=7" alt="Photo 7" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=8" alt="Photo 8" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=9" alt="Photo 9" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://picsum.photos/300/300?random=10" alt="Photo 10" class="square-photo" onclick="openFullscreen(this.src)">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1632,6 +1889,22 @@ This case study analyzes the operational and management problems faced by a zoo 
                 closeModal();
             }
         }
+        
+        // 打开全屏显示
+        function openFullscreen(imageSrc) {
+            document.getElementById('fullscreenModal').style.display = 'block';
+            document.getElementById('fullscreenImage').src = imageSrc;
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 关闭全屏显示
+        function closeFullscreen() {
+            document.getElementById('fullscreenModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // 照片墙无缝循环功能
+        // 使用纯CSS动画实现无缝循环，无需JavaScript干预
     </script>
     
     <!-- 模态框 HTML 结构 -->
@@ -1807,5 +2080,13 @@ This case study analyzes the operational and management problems faced by a zoo 
             }
         }
     </style>
+    
+    <!-- 全屏模态框 -->
+    <div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullscreen()">
+        <span class="close-fullscreen" onclick="closeFullscreen()">&times;</span>
+        <div class="fullscreen-content">
+            <img class="fullscreen-img" id="fullscreenImage" src="" alt="Fullscreen view">
+        </div>
+    </div>
 </body>
 </html>
