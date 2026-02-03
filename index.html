@@ -29,7 +29,24 @@
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 20%);
+            z-index: -1;
+            pointer-events: none;
         }
         
         h1, h2, h3, h4 {
@@ -49,6 +66,7 @@
             position: relative;
             padding-bottom: 0.8rem;
             margin-bottom: 2rem;
+            display: inline-block;
         }
         
         h2:after {
@@ -58,7 +76,13 @@
             left: 0;
             width: 60px;
             height: 4px;
-            background-color: var(--accent-color);
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+        
+        h2:hover:after {
+            width: 100%;
         }
         
         h3 {
@@ -339,6 +363,27 @@
             color: var(--secondary-color);
         }
         
+        .skill-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            border-radius: 5px;
+            position: relative;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+        
+
+        
         /* 目标部分 */
         .goals {
             background-color: #f5f7fa;
@@ -540,6 +585,51 @@
             border-color: var(--secondary-color);
         }
         
+        /* 微交互效果 */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 按钮波纹效果 */
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn:active::after {
+            width: 300px;
+            height: 300px;
+        }
+        
         /* 课外学习部分样式 */
         .learning-out-of-class {
             background-color: #f5f7fa;
@@ -553,21 +643,36 @@
         }
         
         .hobby-item {
-            background-color: white;
+            background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
         }
         
         .hobby-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
         .hobby-item h3 {
             margin-bottom: 1rem;
             color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .hobby-item h3::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            margin-right: 10px;
         }
         
         /* 照片墙样式 */
@@ -625,11 +730,29 @@
             transition: var(--transition);
             /* 启用硬件加速 */
             transform: translateZ(0);
+            position: relative;
         }
         
         .square-photo:hover {
-            transform: scale(1.03) translateZ(0);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05) translateZ(0);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .square-photo::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+            opacity: 0.3;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .square-photo:hover::after {
+            opacity: 0;
         }
         
         @keyframes scrollLeft {
@@ -688,6 +811,41 @@
         
         .close-fullscreen:hover {
             opacity: 0.8;
+        }
+        
+        /* 返回顶部按钮样式 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
         }
         
         /* 响应式设计 */
@@ -992,14 +1150,23 @@
                 <div class="skill-item">
                     <h3><i class="fas fa-book skill-icon"></i> Management Theory Knowledge</h3>
                     <p>My understanding of management theory enables me to analyze organizational structures, leadership styles, and decision-making processes, and apply these concepts to real business situations.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-width="85%"></div>
+                    </div>
                 </div>
                 <div class="skill-item">
                     <h3><i class="fas fa-briefcase skill-icon"></i> Practical Experience</h3>
                     <p>Experience working in a family business has enhanced my problem-solving abilities and provided me with practical understanding of daily operations and management practices.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-width="75%"></div>
+                    </div>
                 </div>
                 <div class="skill-item">
                     <h3><i class="fas fa-language skill-icon"></i> Bilingual Ability</h3>
                     <p>I am proficient in English and Chinese, able to communicate effectively in diverse professional environments and collaborate with people from different cultural backgrounds.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-width="90%"></div>
+                    </div>
                 </div>
             </div>
             <p style="margin-top: 2rem; text-align: center;" id="skillsSummary">These skills enable me to connect theory with practice and prepare for future roles in management and business.</p>
@@ -1905,6 +2072,67 @@ This case study analyzes the operational and management problems faced by a zoo 
         
         // 照片墙无缝循环功能
         // 使用纯CSS动画实现无缝循环，无需JavaScript干预
+        
+        // 返回顶部按钮功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        if(backToTopButton) {
+            // 当页面滚动时显示/隐藏按钮
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            // 确保按钮在页面加载完成后可见（用于调试）
+            window.addEventListener('load', () => {
+                // 可选：临时显示按钮以确认其存在
+                // backToTopButton.classList.add('show');
+            });
+            
+            // 点击按钮时平滑滚动到顶部
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        } else {
+            console.error('Back to top button not found!');
+        }
+        
+        // 技能条动画功能
+        function animateSkillBars() {
+            const skillLevels = document.querySelectorAll('.skill-level');
+            const skillsSection = document.getElementById('skills');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 延迟一下再开始动画，确保元素可见
+                        setTimeout(() => {
+                            skillLevels.forEach(level => {
+                                const width = level.getAttribute('data-width');
+                                level.style.width = width;
+                            });
+                        }, 300);
+                        
+                        observer.disconnect(); // 只执行一次
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+            
+            if(skillsSection) {
+                observer.observe(skillsSection);
+            }
+        }
+        
+        // 页面加载完成后初始化技能条动画
+        window.addEventListener('load', animateSkillBars);
     </script>
     
     <!-- 模态框 HTML 结构 -->
@@ -2088,5 +2316,10 @@ This case study analyzes the operational and management problems faced by a zoo 
             <img class="fullscreen-img" id="fullscreenImage" src="" alt="Fullscreen view">
         </div>
     </div>
+    
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="back-to-top" title="回到顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 </html>
