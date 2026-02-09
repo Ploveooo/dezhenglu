@@ -1192,6 +1192,25 @@
             }
         }
         
+        /* 移动端课外学习部分优化 */
+        @media (max-width: 768px) {
+            .hobbies-grid {
+                grid-template-columns: repeat(2, 1fr); /* 移动端两列显示 */
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hobbies-grid {
+                grid-template-columns: 1fr; /* 小屏幕单列显示 */
+                gap: 20px;
+            }
+            
+            .hobby-item {
+                padding: 1.2rem; /* 减少内边距 */
+            }
+        }
+        
         /* 移动端模态框优化 */
         @media (max-width: 480px) {
             .modal-content {
