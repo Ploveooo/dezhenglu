@@ -1147,6 +1147,52 @@
             }
         }
         
+        @media (max-width: 360px) {
+            .photo-wall-container {
+                height: 140px;
+                padding: 15px 0;
+            }
+            
+            .photo-item {
+                min-width: 120px; /* 在极小屏幕上进一步减小照片尺寸 */
+                height: 100%;
+            }
+            
+            .photo-wall-track {
+                width: calc(120px * 7); /* 根据新的照片尺寸调整 */
+                height: 100%;
+            }
+            
+            #photoWallTrack1,
+            #photoWallTrack2 {
+                animation-duration: 20s; /* 调整动画速度适应极小屏幕 */
+            }
+        }
+        
+        /* 针对非常小的屏幕（如iPhone SE）进一步优化 */
+        @media (max-width: 320px) {
+            .photo-wall-container {
+                height: 120px;
+                padding: 10px 0;
+            }
+            
+            .photo-item {
+                min-width: 100px; /* 在极小屏幕上进一步减小照片尺寸 */
+                height: 100%;
+                margin-right: 5px; /* 添加小间距 */
+            }
+            
+            .photo-wall-track {
+                width: calc(100px * 7); /* 根据新的照片尺寸调整 */
+                height: 100%;
+            }
+            
+            #photoWallTrack1,
+            #photoWallTrack2 {
+                animation-duration: 18s; /* 调整动画速度适应极小屏幕 */
+            }
+        }
+        
         /* 移动端教育背景部分优化 */
         @media (max-width: 768px) {
             .education-content {
@@ -1183,12 +1229,55 @@
         /* 移动端经验部分优化 */
         @media (max-width: 768px) {
             .experience-item {
-                flex-direction: column;
+                padding: 1.5rem; /* 减少内边距 */
             }
             
-            .experience-content {
-                margin-left: 0;
-                margin-top: 15px;
+            .experience-item > div[style*="display: flex"] {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 15px;
+            }
+            
+            .experience-item img[style*="max-width: 80px"] {
+                max-width: 60px !important;
+                max-height: 60px !important;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .experience-company {
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .experience-item {
+                padding: 1.2rem;
+            }
+            
+            .experience-item > div[style*="display: flex"] {
+                gap: 12px;
+            }
+            
+            .experience-item img[style*="max-width: 80px"] {
+                max-width: 50px !important;
+                max-height: 50px !important;
+            }
+            
+            .experience-header {
+                gap: 3px;
+            }
+            
+            h3[id="experienceTitleText"] {
+                font-size: 1.2rem;
+            }
+            
+            .experience-company {
+                font-size: 0.9rem;
             }
         }
         
