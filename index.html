@@ -1102,6 +1102,112 @@
                 font-size: 50px;
             }
         }
+        
+        /* 移动端照片墙优化 */
+        @media (max-width: 768px) {
+            .photo-wall-container {
+                height: 200px;
+                margin: 15px 0;
+            }
+            
+            .photo-item {
+                min-width: 180px; /* 减小移动端照片尺寸 */
+                height: 100%;
+            }
+            
+            .photo-wall-track {
+                width: calc(180px * 7); /* 根据新的照片尺寸调整 */
+                height: 100%;
+            }
+            
+            #photoWallTrack1,
+            #photoWallTrack2 {
+                animation-duration: 30s; /* 调整动画速度适应移动端 */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .photo-wall-container {
+                height: 160px;
+            }
+            
+            .photo-item {
+                min-width: 150px; /* 进一步减小照片尺寸 */
+                height: 100%;
+            }
+            
+            .photo-wall-track {
+                width: calc(150px * 7); /* 根据新的照片尺寸调整 */
+                height: 100%;
+            }
+            
+            #photoWallTrack1,
+            #photoWallTrack2 {
+                animation-duration: 25s; /* 调整动画速度适应小屏 */
+            }
+        }
+        
+        /* 移动端教育背景部分优化 */
+        @media (max-width: 768px) {
+            .education-content {
+                flex-direction: column;
+            }
+            
+            .education-text {
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
+        
+        /* 移动端技能部分优化 */
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr); /* 移动端两列显示 */
+            }
+        }
+        
+        /* 移动端目标部分优化 */
+        @media (max-width: 768px) {
+            .goal-item {
+                min-width: 100%; /* 移动端单列显示 */
+            }
+        }
+        
+        /* 移动端学术作品部分优化 */
+        @media (max-width: 768px) {
+            .artifact {
+                padding: 15px;
+            }
+        }
+        
+        /* 移动端经验部分优化 */
+        @media (max-width: 768px) {
+            .experience-item {
+                flex-direction: column;
+            }
+            
+            .experience-content {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+        
+        /* 移动端模态框优化 */
+        @media (max-width: 480px) {
+            .modal-content {
+                width: 98%;
+                padding: 10px;
+                margin: 10% auto;
+            }
+            
+            .modal-body h1 {
+                font-size: 18px;
+            }
+            
+            .modal-body h2 {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
