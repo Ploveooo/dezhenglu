@@ -1102,220 +1102,6 @@
                 font-size: 50px;
             }
         }
-        
-        /* 移动端照片墙优化 */
-        @media (max-width: 768px) {
-            .photo-wall-container {
-                height: 200px;
-                margin: 15px 0;
-            }
-            
-            .photo-item {
-                min-width: 180px; /* 减小移动端照片尺寸 */
-                height: 100%;
-            }
-            
-            .photo-wall-track {
-                width: calc(180px * 7); /* 根据新的照片尺寸调整 */
-                height: 100%;
-            }
-            
-            #photoWallTrack1,
-            #photoWallTrack2 {
-                animation-duration: 30s; /* 调整动画速度适应移动端 */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .photo-wall-container {
-                height: 160px;
-            }
-            
-            .photo-item {
-                min-width: 150px; /* 进一步减小照片尺寸 */
-                height: 100%;
-            }
-            
-            .photo-wall-track {
-                width: calc(150px * 7); /* 根据新的照片尺寸调整 */
-                height: 100%;
-            }
-            
-            #photoWallTrack1,
-            #photoWallTrack2 {
-                animation-duration: 25s; /* 调整动画速度适应小屏 */
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .photo-wall-container {
-                height: 140px;
-                padding: 15px 0;
-            }
-            
-            .photo-item {
-                min-width: 120px; /* 在极小屏幕上进一步减小照片尺寸 */
-                height: 100%;
-            }
-            
-            .photo-wall-track {
-                width: calc(120px * 7); /* 根据新的照片尺寸调整 */
-                height: 100%;
-            }
-            
-            #photoWallTrack1,
-            #photoWallTrack2 {
-                animation-duration: 20s; /* 调整动画速度适应极小屏幕 */
-            }
-        }
-        
-        /* 针对非常小的屏幕（如iPhone SE）进一步优化 */
-        @media (max-width: 320px) {
-            .photo-wall-container {
-                height: 120px;
-                padding: 10px 0;
-            }
-            
-            .photo-item {
-                min-width: 100px; /* 在极小屏幕上进一步减小照片尺寸 */
-                height: 100%;
-                margin-right: 5px; /* 添加小间距 */
-            }
-            
-            .photo-wall-track {
-                width: calc(100px * 7); /* 根据新的照片尺寸调整 */
-                height: 100%;
-            }
-            
-            #photoWallTrack1,
-            #photoWallTrack2 {
-                animation-duration: 18s; /* 调整动画速度适应极小屏幕 */
-            }
-        }
-        
-        /* 移动端教育背景部分优化 */
-        @media (max-width: 768px) {
-            .education-content {
-                flex-direction: column;
-            }
-            
-            .education-text {
-                text-align: center;
-                margin-top: 15px;
-            }
-        }
-        
-        /* 移动端技能部分优化 */
-        @media (max-width: 768px) {
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr); /* 移动端两列显示 */
-            }
-        }
-        
-        /* 移动端目标部分优化 */
-        @media (max-width: 768px) {
-            .goal-item {
-                min-width: 100%; /* 移动端单列显示 */
-            }
-        }
-        
-        /* 移动端学术作品部分优化 */
-        @media (max-width: 768px) {
-            .artifact {
-                padding: 15px;
-            }
-        }
-        
-        /* 移动端经验部分优化 */
-        @media (max-width: 768px) {
-            .experience-item {
-                padding: 1.5rem; /* 减少内边距 */
-            }
-            
-            .experience-item > div[style*="display: flex"] {
-                flex-direction: column;
-                align-items: flex-start !important;
-                gap: 15px;
-            }
-            
-            .experience-item img[style*="max-width: 80px"] {
-                max-width: 60px !important;
-                max-height: 60px !important;
-            }
-            
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-            
-            .experience-company {
-                font-size: 0.95rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .experience-item {
-                padding: 1.2rem;
-            }
-            
-            .experience-item > div[style*="display: flex"] {
-                gap: 12px;
-            }
-            
-            .experience-item img[style*="max-width: 80px"] {
-                max-width: 50px !important;
-                max-height: 50px !important;
-            }
-            
-            .experience-header {
-                gap: 3px;
-            }
-            
-            h3[id="experienceTitleText"] {
-                font-size: 1.2rem;
-            }
-            
-            .experience-company {
-                font-size: 0.9rem;
-            }
-        }
-        
-        /* 移动端课外学习部分优化 */
-        @media (max-width: 768px) {
-            .hobbies-grid {
-                grid-template-columns: repeat(2, 1fr); /* 移动端两列显示 */
-                gap: 15px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hobbies-grid {
-                grid-template-columns: 1fr; /* 小屏幕单列显示 */
-                gap: 20px;
-            }
-            
-            .hobby-item {
-                padding: 1.2rem; /* 减少内边距 */
-            }
-        }
-        
-        /* 移动端模态框优化 */
-        @media (max-width: 480px) {
-            .modal-content {
-                width: 98%;
-                padding: 10px;
-                margin: 10% auto;
-            }
-            
-            .modal-body h1 {
-                font-size: 18px;
-            }
-            
-            .modal-body h2 {
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1411,19 +1197,19 @@
                 <div class="hobbies-grid">
                     <div class="hobby-item">
                         <h3>🎱 Pool & Strategy</h3>
-                        <p>The quiet focus of the billiards hall is my meditation. Each shot teaches precision, patience, and geometry in motion. It's not just a game—it's a continuous exercise in calculating angles, anticipating outcomes, and maintaining composure under pressure.</p>
+                        <p>Playing pool helps me improve my focus and patience. Each shot requires careful thinking and planning. I need to stay calm and control my emotions, especially under pressure. This hobby has taught me how to think ahead and make better decisions.</p>
                     </div>
                     <div class="hobby-item">
                         <h3>💪 Fitness & Discipline</h3>
-                        <p>The gym is where I transform intention into action. Whether lifting weights or pushing through cardio, fitness has taught me the profound connection between consistent effort and tangible results. It's a daily reminder that growth often happens outside our comfort zones.</p>
+                        <p>Fitness has taught me the importance of discipline and consistency. Going to the gym requires effort and self-control. Progress does not happen overnight, but through daily practice. This experience reminds me that hard work leads to real results </p>
                     </div>
                     <div class="hobby-item">
                         <h3>🌍 Travel & Perspective</h3>
-                        <p>My backpack has carried me through ancient cities and mountain trails alike. Every journey rewrites my understanding of the world—from navigating foreign markets to sharing meals with strangers who become friends. Travel doesn't just show me new places; it shows me new ways of being.</p>
+                        <p>Travel allows me to see the world from different perspectives. Visiting new places and meeting new people helps me understand different cultures. These experiences have made me more open-minded and adaptable in new environments.</p>
                     </div>
                     <div class="hobby-item">
                         <h3>📸 Photography & Storytelling</h3>
-                        <p>Through my lens, I've learned to see differently. Photography taught me that light has moods, shadows have depth, and every moment holds a story waiting to be framed. From capturing street life in bustling cities to freezing mountain dawns in pixels, I'm collecting visual poems, one click at a time.</p>
+                        <p>Photography helps me notice details in everyday life. Through taking photos, I learn how light and timing affect a picture. Photography allows me to tell stories and express ideas in a visual way.</p>
                     </div>
                 </div>
                 
@@ -1574,8 +1360,8 @@
                     <span class="artifact-date">October 20, 2025</span>
                 </div>
                 <p><strong>Course:</strong> Principle of Marketing</p>
-                <p><strong>Description:</strong> This work focuses on marketing principles and their practical applications in today's competitive business environment.</p>
-                <p><strong>Content:</strong> <span id="marketingContent">This walk made me realize that Boston's history is shaped by many different people, not just famous figures. I saw how women, activists, and ordinary workers drove social change. It also made me realize that history is actually in our everyday lives.</span></p>
+                <p><strong>Description:</strong> This work is based on my experience of walking this route and exploring its history and meaning.</p>
+                <p><strong>Content:</strong> <span id="marketingContent">This walk helped me understand that Boston’s history was shaped by many different people, not only famous leaders. I learned how women, activists, and ordinary workers played important roles in social change. It also showed me that history is connected to everyday life around us.</span></p>
                 <div style="margin-top: 1.5rem; padding: 10px; background: linear-gradient(145deg, #f0f0f0, #cacaca); border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);">
                     <video id="marketingVideo" width="100%" height="400" controls style="border-radius: 8px; border: 2px solid #3498db; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                         <source src="movie.mp4" type="video/mp4">
@@ -1944,24 +1730,15 @@ This case study analyzes the operational and management problems faced by a zoo 
         // 初始化页面内容
         function initPageContent() {
             // 关于我
-            const aboutText1 = document.getElementById('aboutText1');
-            const aboutText2 = document.getElementById('aboutText2');
-            const aboutText3 = document.getElementById('aboutText3');
-            
-            if (aboutText1) aboutText1.textContent = websiteData.about[0];
-            if (aboutText2) aboutText2.textContent = websiteData.about[1];
-            if (aboutText3) aboutText3.textContent = websiteData.about[2];
+            document.getElementById('aboutText1').textContent = websiteData.about[0];
+            document.getElementById('aboutText2').textContent = websiteData.about[1];
+            document.getElementById('aboutText3').textContent = websiteData.about[2];
             
             // 教育
-            const educationSchool = document.getElementById('educationSchool');
-            const educationDateText = document.getElementById('educationDateText');
-            const educationDegree = document.getElementById('educationDegree');
-            const educationDescription = document.getElementById('educationDescription');
-            
-            if (educationSchool) educationSchool.textContent = websiteData.education.school;
-            if (educationDateText) educationDateText.textContent = websiteData.education.date;
-            if (educationDegree) educationDegree.innerHTML = `<strong>${websiteData.education.degree}</strong>`;
-            if (educationDescription) educationDescription.textContent = websiteData.education.description;
+            document.getElementById('educationSchool').textContent = websiteData.education.school;
+            document.getElementById('educationDateText').textContent = websiteData.education.date;
+            document.getElementById('educationDegree').innerHTML = `<strong>${websiteData.education.degree}</strong>`;
+            document.getElementById('educationDescription').textContent = websiteData.education.description;
             
             // 技能
             renderSkills();
@@ -1970,52 +1747,35 @@ This case study analyzes the operational and management problems faced by a zoo 
             renderGoals();
             
             // 学术作品
-            const academicTitleText = document.getElementById('academicTitleText');
-            const academicDateText = document.getElementById('academicDateText');
-            const academicCourseText = document.getElementById('academicCourseText');
-            const academicDescriptionText = document.getElementById('academicDescriptionText');
-            const academicReflectionText = document.getElementById('academicReflectionText');
-            
-            if (academicTitleText) academicTitleText.textContent = websiteData.academic.title;
-            if (academicDateText) academicDateText.textContent = websiteData.academic.date;
-            
+            document.getElementById('academicTitleText').textContent = websiteData.academic.title;
+            document.getElementById('academicDateText').textContent = websiteData.academic.date;
             // 根据当前语言设置课程内容
             if (currentLang === 'en') {
-                if (academicCourseText) academicCourseText.textContent = "Course: Principles of Management";
-                if (academicDescriptionText) academicDescriptionText.textContent = "Description: This work is a case study assignment for my Principles of Management course. The task required me to analyze the operational and management problems faced by a zoo experiencing declining attendance and financial challenges. By assuming the role of zoo manager, I identified key organizational issues and proposed multiple strategic solutions. This assignment emphasized the application of core management principles, including planning, decision-making, and evaluating alternatives in real organizational contexts.";
-                if (academicReflectionText) academicReflectionText.textContent = "Reflection: This work demonstrates my ability to apply management theory to practical situations and think from a manager's perspective. Through this case, I learned how management decisions must balance short-term performance with long-term organizational sustainability. This process strengthened my analytical thinking and problem-solving abilities, and helped me better understand how effective management strategies can improve organizational outcomes. This experience directly supports my academic development in management and my long-term goal of pursuing leadership roles in the business field.";
+                document.getElementById('academicCourseText').textContent = "Course: Principles of Management";
+                document.getElementById('academicDescriptionText').textContent = "Description: This work is a case study assignment for my Principles of Management course. The task required me to analyze the operational and management problems faced by a zoo experiencing declining attendance and financial challenges. By assuming the role of zoo manager, I identified key organizational issues and proposed multiple strategic solutions. This assignment emphasized the application of core management principles, including planning, decision-making, and evaluating alternatives in real organizational contexts.";
+                document.getElementById('academicReflectionText').textContent = "Reflection: This work demonstrates my ability to apply management theory to practical situations and think from a manager's perspective. Through this case, I learned how management decisions must balance short-term performance with long-term organizational sustainability. This process strengthened my analytical thinking and problem-solving abilities, and helped me better understand how effective management strategies can improve organizational outcomes. This experience directly supports my academic development in management and my long-term goal of pursuing leadership roles in the business field.";
             } else {
-                if (academicCourseText) academicCourseText.textContent = `Course: ${websiteData.academic.course}`;
-                if (academicDescriptionText) academicDescriptionText.textContent = `Description: ${websiteData.academic.description}`;
-                if (academicReflectionText) academicReflectionText.textContent = `Reflection: ${websiteData.academic.reflection}`;
+                document.getElementById('academicCourseText').textContent = `Course: ${websiteData.academic.course}`;
+                document.getElementById('academicDescriptionText').textContent = `Description: ${websiteData.academic.description}`;
+                document.getElementById('academicReflectionText').textContent = `Reflection: ${websiteData.academic.reflection}`;
             }
             
             // 专业经验
-            const experienceTitleText = document.getElementById('experienceTitleText');
-            const experienceCompanyText = document.getElementById('experienceCompanyText');
-            const experienceDescriptionText = document.getElementById('experienceDescriptionText');
-            const experienceReflectionText = document.getElementById('experienceReflectionText');
-            
-            if (experienceTitleText) experienceTitleText.textContent = websiteData.experience.title;
-            if (experienceCompanyText) experienceCompanyText.textContent = websiteData.experience.company;
-            if (experienceDescriptionText) experienceDescriptionText.textContent = websiteData.experience.description;
-            if (experienceReflectionText) experienceReflectionText.textContent = `Reflection: ${websiteData.experience.reflection}`;
+            document.getElementById('experienceTitleText').textContent = websiteData.experience.title;
+            document.getElementById('experienceCompanyText').textContent = websiteData.experience.company;
+            document.getElementById('experienceDescriptionText').textContent = websiteData.experience.description;
+            document.getElementById('experienceReflectionText').textContent = `Reflection: ${websiteData.experience.reflection}`;
             
             // 联系信息
-            const contactNameText = document.getElementById('contactNameText');
-            const contactPhoneText = document.getElementById('contactPhoneText');
-            const contactEmailText = document.getElementById('contactEmailText');
-            const contactInstagramLink = document.getElementById('contactInstagramLink');
-            
-            if (contactNameText) contactNameText.textContent = websiteData.contact.name;
-            if (contactPhoneText) contactPhoneText.textContent = websiteData.contact.phone;
-            if (contactEmailText) contactEmailText.textContent = websiteData.contact.email;
+            document.getElementById('contactNameText').textContent = websiteData.contact.name;
+            document.getElementById('contactPhoneText').textContent = websiteData.contact.phone;
+            document.getElementById('contactEmailText').textContent = websiteData.contact.email;
             
             // Instagram
-            if (websiteData.contact.instagram && contactInstagramLink) {
+            if (websiteData.contact.instagram) {
                 const instagramHandle = websiteData.contact.instagram;
-                contactInstagramLink.href = `https://www.instagram.com/${instagramHandle}/`;
-                contactInstagramLink.textContent = `@${instagramHandle}`;
+                document.getElementById('contactInstagramLink').href = `https://www.instagram.com/${instagramHandle}/`;
+                document.getElementById('contactInstagramLink').textContent = `@${instagramHandle}`;
             }
             
             // 学术文档内容
@@ -2031,10 +1791,7 @@ This case study analyzes the operational and management problems faced by a zoo 
             
             if (websiteData.images.profile) {
                 console.log('加载个人头像图片');
-                const heroProfileImg = document.getElementById('heroProfileImg');
-                if (heroProfileImg) {
-                    heroProfileImg.src = websiteData.images.profile;
-                }
+                document.getElementById('heroProfileImg').src = websiteData.images.profile;
             } else {
                 console.log('个人头像图片不存在，使用默认图片');
             }
@@ -2042,9 +1799,7 @@ This case study analyzes the operational and management problems faced by a zoo 
             if (websiteData.images.about) {
                 console.log('加载关于我图片');
                 const aboutImageContainer = document.getElementById('aboutImageContainer');
-                if (aboutImageContainer) {
-                    aboutImageContainer.innerHTML = `<img src="${websiteData.images.about}" alt="Dezheng Lu的个人照片" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`;
-                }
+                aboutImageContainer.innerHTML = `<img src="${websiteData.images.about}" alt="Dezheng Lu的个人照片" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`;
             } else {
                 console.log('关于我图片不存在，使用默认样式');
             }
@@ -2052,11 +1807,9 @@ This case study analyzes the operational and management problems faced by a zoo 
             if (websiteData.images.hero) {
                 console.log('加载首页背景图片');
                 const heroSection = document.querySelector('.hero');
-                if (heroSection) {
-                    heroSection.style.background = `linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('${websiteData.images.hero}')`;
-                    heroSection.style.backgroundSize = 'cover';
-                    heroSection.style.backgroundPosition = 'center';
-                }
+                heroSection.style.background = `linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('${websiteData.images.hero}')`;
+                heroSection.style.backgroundSize = 'cover';
+                heroSection.style.backgroundPosition = 'center';
             } else {
                 console.log('首页背景图片不存在，使用默认背景');
             }
@@ -2065,15 +1818,9 @@ This case study analyzes the operational and management problems faced by a zoo 
                 console.log('加载公司标志图片');
                 const companyLogoImg = document.getElementById('companyLogoImg');
                 const companyLogoIcon = document.querySelector('#companyLogoContainer i');
-                
-                if (companyLogoImg) {
-                    companyLogoImg.src = websiteData.images.companyLogo;
-                    companyLogoImg.style.display = 'block';
-                }
-                
-                if (companyLogoIcon) {
-                    companyLogoIcon.style.display = 'none';
-                }
+                companyLogoImg.src = websiteData.images.companyLogo;
+                companyLogoImg.style.display = 'block';
+                companyLogoIcon.style.display = 'none';
             } else {
                 console.log('公司标志图片不存在，使用默认图标');
             }
@@ -2131,15 +1878,12 @@ This case study analyzes the operational and management problems faced by a zoo 
                
             `;
             
-            const academicDocContent = document.getElementById('academicDocumentContent');
-            if (academicDocContent) {
-                academicDocContent.innerHTML = content;
-                
-                // 更新文档头部标题
-                const docHeader = document.querySelector('.document-header h4');
-                if (docHeader) {
-                    docHeader.textContent = 'Riverside City Zoo Expansion Plan';
-                }
+            document.getElementById('academicDocumentContent').innerHTML = content;
+            
+            // 更新文档头部标题
+            const docHeader = document.querySelector('.document-header h4');
+            if (docHeader) {
+                docHeader.textContent = 'Riverside City Zoo Expansion Plan';
             }
         }
         
@@ -2197,7 +1941,7 @@ This case study analyzes the operational and management problems faced by a zoo 
                     }, 300);
                 });
             } else {
-                console.warn('Academic artifact or popup elements not found, hover effect disabled');
+                console.error('Could not find academic artifact or popup elements');
             }
         }
 
@@ -2212,30 +1956,20 @@ This case study analyzes the operational and management problems faced by a zoo 
             currentLang = lang;
             
             // 更新导航栏
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach((link, index) => {
+            document.querySelectorAll('.nav-links a').forEach((link, index) => {
                 const navItems = ['home', 'about', 'education', 'skills', 'goals', 'academic', 'experience', 'contact'];
-                if (link && translations[lang].nav[navItems[index]]) {
-                    link.textContent = translations[lang].nav[navItems[index]];
-                }
+                link.textContent = translations[lang].nav[navItems[index]];
             });
             
             // 更新首页内容
-            const heroTitle = document.getElementById('heroTitle');
-            const heroSubtitle = document.getElementById('heroSubtitle');
-            const heroBtn = document.querySelector('.hero a.btn');
-            
-            if (heroTitle) heroTitle.textContent = translations[lang].hero.title;
-            if (heroSubtitle) heroSubtitle.textContent = translations[lang].hero.subtitle;
-            if (heroBtn) heroBtn.textContent = translations[lang].hero.learnMore;
+            document.getElementById('heroTitle').textContent = translations[lang].hero.title;
+            document.getElementById('heroSubtitle').textContent = translations[lang].hero.subtitle;
+            document.querySelector('.hero a.btn').textContent = translations[lang].hero.learnMore;
             
             // 更新各个部分标题
-            const headings = document.querySelectorAll('section h2');
-            headings.forEach((heading, index) => {
+            document.querySelectorAll('section h2').forEach((heading, index) => {
                 const sections = ['about', 'education', 'skills', 'goals', 'academic', 'experience', 'contact'];
-                if (heading && translations[lang].sections[sections[index]]) {
-                    heading.textContent = translations[lang].sections[sections[index]];
-                }
+                heading.textContent = translations[lang].sections[sections[index]];
             });
             
             // 更新关于我内容
@@ -2244,66 +1978,48 @@ This case study analyzes the operational and management problems faced by a zoo 
                 lang === 'en' ? "I am very interested in business and management, and enjoy watching speeches and interviews of successful business leaders. Through these videos, I have learned different ways of thinking, leadership styles, and decision-making strategies, and often find inspiration and personal resonance from their experiences." : "我对商业和管理非常感兴趣，喜欢观看成功商业领袖的演讲和采访。通过这些视频，我学习了不同的思维方式、领导风格和决策策略，并经常从他们的经验中找到灵感和个人共鸣。",
                 lang === 'en' ? "I look forward to continuing my academic journey and using my management knowledge to grow professionally and contribute to the business field." : "我期待继续我的学术之旅，并利用我的管理知识在专业上成长，为商业领域做出贡献。"
             ];
-            const aboutText1 = document.getElementById('aboutText1');
-            const aboutText2 = document.getElementById('aboutText2');
-            const aboutText3 = document.getElementById('aboutText3');
-            
-            if (aboutText1) aboutText1.textContent = aboutTexts[0];
-            if (aboutText2) aboutText2.textContent = aboutTexts[1];
-            if (aboutText3) aboutText3.textContent = aboutTexts[2];
+            document.getElementById('aboutText1').textContent = aboutTexts[0];
+            document.getElementById('aboutText2').textContent = aboutTexts[1];
+            document.getElementById('aboutText3').textContent = aboutTexts[2];
             
             // 更新教育内容
             // 直接更新各个元素的内容，不使用任何调试信息或元素存在性检查
-            const educationSchool = document.getElementById('educationSchool');
-            const educationDateText = document.getElementById('educationDateText');
-            const educationDegree = document.getElementById('educationDegree');
-            const educationDescription = document.getElementById('educationDescription');
-            
-            if (educationSchool) educationSchool.textContent = lang === 'en' ? "Fisher College - Boston, MA" : "Fisher College - Boston, MA";
-            if (educationDateText) educationDateText.textContent = lang === 'en' ? "Expected graduation: May 2027" : "预计毕业: 2027年5月";
-            if (educationDegree) educationDegree.innerHTML = lang === 'en' ? "<strong>Bachelor of Science in Management</strong>" : "<strong>管理学学士</strong>";
-            if (educationDescription) educationDescription.textContent = lang === 'en' ? "Focus on organizational behavior, strategic management, and leadership development. Established a solid foundation in management theory and analytical skills through coursework and practical projects." : "专注于组织行为学、战略管理和领导力发展。通过课程学习和实践项目，建立了扎实的管理理论基础和分析能力。";
+            document.getElementById('educationSchool').textContent = lang === 'en' ? "Fisher College - Boston, MA" : "Fisher College - Boston, MA";
+            document.getElementById('educationDateText').textContent = lang === 'en' ? "Expected graduation: May 2027" : "预计毕业: 2027年5月";
+            document.getElementById('educationDegree').innerHTML = lang === 'en' ? "<strong>Bachelor of Science in Management</strong>" : "<strong>管理学学士</strong>";
+            document.getElementById('educationDescription').textContent = lang === 'en' ? "Focus on organizational behavior, strategic management, and leadership development. Established a solid foundation in management theory and analytical skills through coursework and practical projects." : "专注于组织行为学、战略管理和领导力发展。通过课程学习和实践项目，建立了扎实的管理理论基础和分析能力。";
             
             // 更新技能内容
             const skillsListFront = document.getElementById('skillsListFront');
-            if (skillsListFront) {
-                skillsListFront.innerHTML = '';
-                const skills = lang === 'en' ? [
-                    { title: "Management Theory Knowledge", description: "My understanding of management theory enables me to analyze organizational structures, leadership styles, and decision-making processes, and apply these concepts to real business situations." },
-                    { title: "Practical Experience", description: "The experience of working in a family business has improved my problem-solving ability and given me a practical understanding of daily operation and management practice." },
-                    { title: "Bilingual Ability", description: "I am proficient in English and Chinese, able to communicate effectively in diverse professional environments and collaborate with people from different cultural backgrounds." }
-                ] : [
-                    { title: "管理理论知识", description: "我对管理理论的理解使我能够分析组织结构、领导风格和决策过程，并将这些概念应用于实际的商业情境中。" },
-                    { title: "实践经验", description: "在家族企业工作的经历增强了我的问题解决能力，并让我对日常运营和管理实践有了实际的了解。" },
-                    { title: "双语能力", description: "我精通英语和中文，能够在多元化的专业环境中有效沟通，并与来自不同文化背景的人合作。" }
-                ];
-            if (skillsListFront) {
-                skills.forEach((skill, index) => {
-                    const skillItem = document.createElement('div');
-                    skillItem.className = 'skill-item';
-                    skillItem.innerHTML = `
-                        <h3><i class="fas fa-${getSkillIcon(skill.title)} skill-icon"></i> ${skill.title}</h3>
-                        <p>${skill.description}</p>
-                    `;
-                    skillsListFront.appendChild(skillItem);
-                });
-            }
-            
-            const skillsSummary = document.getElementById('skillsSummary');
-            if (skillsSummary) skillsSummary.textContent = lang === 'en' ? "These skills enable me to connect theory with practice and prepare for future roles in management and business." : "这些技能使我能够连接理论与实践，为未来在管理和商业领域的角色做好准备。";
+            skillsListFront.innerHTML = '';
+            const skills = lang === 'en' ? [
+                { title: "Management Theory Knowledge", description: "My understanding of management theory enables me to analyze organizational structures, leadership styles, and decision-making processes, and apply these concepts to real business situations." },
+                { title: "Practical Experience", description: "Experience working in a family business has enhanced my problem-solving abilities and provided me with practical understanding of daily operations and management practices." },
+                { title: "Bilingual Ability", description: "I am proficient in English and Chinese, able to communicate effectively in diverse professional environments and collaborate with people from different cultural backgrounds." }
+            ] : [
+                { title: "管理理论知识", description: "我对管理理论的理解使我能够分析组织结构、领导风格和决策过程，并将这些概念应用于实际的商业情境中。" },
+                { title: "实践经验", description: "在家族企业工作的经历增强了我的问题解决能力，并让我对日常运营和管理实践有了实际的了解。" },
+                { title: "双语能力", description: "我精通英语和中文，能够在多元化的专业环境中有效沟通，并与来自不同文化背景的人合作。" }
+            ];
+            skills.forEach((skill, index) => {
+                const skillItem = document.createElement('div');
+                skillItem.className = 'skill-item';
+                skillItem.innerHTML = `
+                    <h3><i class="fas fa-${getSkillIcon(skill.title)} skill-icon"></i> ${skill.title}</h3>
+                    <p>${skill.description}</p>
+                `;
+                skillsListFront.appendChild(skillItem);
+            });
+            document.getElementById('skillsSummary').textContent = lang === 'en' ? "These skills enable me to connect theory with practice and prepare for future roles in management and business." : "这些技能使我能够连接理论与实践，为未来在管理和商业领域的角色做好准备。";
             
             // 更新目标内容
-            const firstGoalHeading = document.querySelector('.goal-item:nth-child(1) h3');
-            const secondGoalHeading = document.querySelector('.goal-item:nth-child(2) h3');
-            
-            if (firstGoalHeading) firstGoalHeading.textContent = lang === 'en' ? "Short-term Goals" : "短期目标";
-            if (secondGoalHeading) secondGoalHeading.textContent = lang === 'en' ? "Long-term Goals" : "长期目标";
+            document.querySelector('.goal-item:nth-child(1) h3').textContent = lang === 'en' ? "Short-term Goals" : "短期目标";
+            document.querySelector('.goal-item:nth-child(2) h3').textContent = lang === 'en' ? "Long-term Goals" : "长期目标";
             
             const shortTermList = document.getElementById('shortTermGoalsList');
             const longTermList = document.getElementById('longTermGoalsList');
-            
-            if (shortTermList) shortTermList.innerHTML = '';
-            if (longTermList) longTermList.innerHTML = '';
+            shortTermList.innerHTML = '';
+            longTermList.innerHTML = '';
             
             const shortTermGoals = lang === 'en' ? [
                 "Achieve A grades in all courses and successfully complete the bachelor's degree",
@@ -2327,21 +2043,17 @@ This case study analyzes the operational and management problems faced by a zoo 
                 "为公司的可持续增长和长期发展做出贡献"
             ];
             
-            if (shortTermList) {
-                shortTermGoals.forEach(goal => {
-                    const li = document.createElement('li');
-                    li.textContent = goal;
-                    shortTermList.appendChild(li);
-                });
-            }
+            shortTermGoals.forEach(goal => {
+                const li = document.createElement('li');
+                li.textContent = goal;
+                shortTermList.appendChild(li);
+            });
             
-            if (longTermList) {
-                longTermGoals.forEach(goal => {
-                    const li = document.createElement('li');
-                    li.textContent = goal;
-                    longTermList.appendChild(li);
-                });
-            }
+            longTermGoals.forEach(goal => {
+                const li = document.createElement('li');
+                li.textContent = goal;
+                longTermList.appendChild(li);
+            });
             
             // 更新学术作品内容
             document.getElementById('academicTitleText').textContent = lang === 'en' ? "Zoo Management Case Study" : "动物园管理案例研究";
@@ -2357,30 +2069,19 @@ This case study analyzes the operational and management problems faced by a zoo 
             document.getElementById('experienceReflectionText').textContent = lang === 'en' ? "Reflection: This experience allowed me to connect practical business operations with management theories learned in the classroom. Through participation in sales, market development, and internal coordination, I gained a deeper understanding of how management decisions affect product strategy, employee performance, and overall business success. It also strengthened my ability to analyze business situations from both practical and strategic perspectives, preparing me for future leadership roles." : "反思: 这个经验让我能够将实际的商业运营与课堂上学到的管理理论联系起来。通过参与销售、市场开发和内部协调，我对管理决策如何影响产品战略、员工绩效和整体业务成功有了更深入的理解。这也加强了我从实践和战略角度分析商业情况的能力，为未来的领导角色做好了准备。";
             
             // 更新联系信息
-            const contactIntro = document.getElementById('contactIntro');
-            if (contactIntro) contactIntro.textContent = translations[lang].contact.intro;
-            
-            const contactHeaders = document.querySelectorAll('.contact-item h3');
-            contactHeaders.forEach((item, index) => {
+            document.getElementById('contactIntro').textContent = translations[lang].contact.intro;
+            document.querySelectorAll('.contact-item h3').forEach((item, index) => {
                 const contactItems = ['name', 'phone', 'email', 'instagram'];
-                if (item && translations[lang].contact[contactItems[index]]) {
-                    item.textContent = translations[lang].contact[contactItems[index]];
-                }
+                item.textContent = translations[lang].contact[contactItems[index]];
             });
             
             // 更新页脚
-            const footerText = document.querySelector('footer p');
-            const copyrightText = document.querySelector('.copyright');
-            
-            if (footerText) footerText.textContent = translations[lang].footer.thanks;
-            if (copyrightText) copyrightText.textContent = translations[lang].footer.copyright;
+            document.querySelector('footer p').textContent = translations[lang].footer.thanks;
+            document.querySelector('.copyright').textContent = translations[lang].footer.copyright;
             
             // 更新语言按钮样式
-            const langEnBtn = document.getElementById('langEn');
-            const langCnBtn = document.getElementById('langCn');
-            
-            if (langEnBtn) langEnBtn.style.backgroundColor = lang === 'en' ? '#3498db' : '#95a5a6';
-            if (langCnBtn) langCnBtn.style.backgroundColor = lang === 'cn' ? '#3498db' : '#95a5a6';
+            document.getElementById('langEn').style.backgroundColor = lang === 'en' ? '#3498db' : '#95a5a6';
+            document.getElementById('langCn').style.backgroundColor = lang === 'cn' ? '#3498db' : '#95a5a6';
             
             // 保存语言偏好
             localStorage.setItem('portfolioLanguage', lang);
@@ -2399,7 +2100,7 @@ This case study analyzes the operational and management problems faced by a zoo 
             
             // 默认显示首页背景图预览
             const imagePreview = document.getElementById('imagePreview');
-            if (imagePreview && websiteData.images.hero) {
+            if (websiteData.images.hero) {
                 imagePreview.src = websiteData.images.hero;
                 imagePreview.style.display = 'block';
             }
@@ -2408,29 +2109,19 @@ This case study analyzes the operational and management problems faced by a zoo 
             initAcademicHover();
             
             // 语言切换按钮事件
-            const langEnBtn = document.getElementById('langEn');
-            const langCnBtn = document.getElementById('langCn');
-            
-            if (langEnBtn) {
-                langEnBtn.addEventListener('click', () => changeLanguage('en'));
-            }
-            
-            if (langCnBtn) {
-                langCnBtn.addEventListener('click', () => changeLanguage('cn'));
-            }
+            document.getElementById('langEn').addEventListener('click', () => changeLanguage('en'));
+            document.getElementById('langCn').addEventListener('click', () => changeLanguage('cn'));
 
             // 网站原有功能
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             
-            if (mobileMenuBtn && navLinks) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                    mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                        ? '<i class="fas fa-times"></i>' 
-                        : '<i class="fas fa-bars"></i>';
-                });
-            }
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
             
             // 平滑滚动
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2443,9 +2134,7 @@ This case study analyzes the operational and management problems faced by a zoo 
                     const targetElement = document.querySelector(targetId);
                     if(targetElement) {
                         navLinks.classList.remove('active');
-                        if (mobileMenuBtn) {
-                            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                        }
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                         
                         window.scrollTo({
                             top: targetElement.offsetTop - 80,
@@ -2467,52 +2156,25 @@ This case study analyzes the operational and management problems faced by a zoo 
                 }
             });
 
-            // 返回顶部按钮功能
-            const backToTopButton = document.getElementById('backToTop');
-            
-            if(backToTopButton) {
-                // 当页面滚动时显示/隐藏按钮
-                window.addEventListener('scroll', () => {
-                    if (window.pageYOffset > 300) {
-                        backToTopButton.classList.add('show');
-                    } else {
-                        backToTopButton.classList.remove('show');
-                    }
-                });
-                
-                // 点击按钮时平滑滚动到顶部
-                backToTopButton.addEventListener('click', () => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            } else {
-                console.error('Back to top button not found!');
-            }
-
             // 图片点击上传功能
-            const heroProfileImg = document.getElementById('heroProfileImg');
-            if (heroProfileImg) {
-                heroProfileImg.addEventListener('click', function() {
-                    if (isLoggedIn) {
-                        // 如果已登录，直接打开图片管理
-                        openAdminModal();
-                        // 切换到图片管理标签
-                        document.querySelectorAll('.admin-nav-btn').forEach(btn => btn.classList.remove('active'));
-                        document.querySelector('[data-section="images"]').classList.add('active');
-                        document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
-                        document.getElementById('imagesSection').classList.add('active');
-                        // 选择个人头像
-                        document.querySelectorAll('.section-option').forEach(opt => opt.classList.remove('active'));
-                        document.querySelector('[data-img="profile"]').classList.add('active');
-                        currentImageType = 'profile';
-                    } else {
-                        // 如果未登录，打开登录
-                        openLoginModal();
-                    }
-                });
-            }
+            document.getElementById('heroProfileImg').addEventListener('click', function() {
+                if (isLoggedIn) {
+                    // 如果已登录，直接打开图片管理
+                    openAdminModal();
+                    // 切换到图片管理标签
+                    document.querySelectorAll('.admin-nav-btn').forEach(btn => btn.classList.remove('active'));
+                    document.querySelector('[data-section="images"]').classList.add('active');
+                    document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+                    document.getElementById('imagesSection').classList.add('active');
+                    // 选择个人头像
+                    document.querySelectorAll('.section-option').forEach(opt => opt.classList.remove('active'));
+                    document.querySelector('[data-img="profile"]').classList.add('active');
+                    currentImageType = 'profile';
+                } else {
+                    // 如果未登录，打开登录
+                    openLoginModal();
+                }
+            });
         });
         
         // 模态框相关代码
@@ -2745,6 +2407,36 @@ This case study analyzes the operational and management problems faced by a zoo 
         
         // 照片墙无缝循环功能
         // 使用纯CSS动画实现无缝循环，无需JavaScript干预
+        
+        // 返回顶部按钮功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        if(backToTopButton) {
+            // 当页面滚动时显示/隐藏按钮
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            // 确保按钮在页面加载完成后可见（用于调试）
+            window.addEventListener('load', () => {
+                // 可选：临时显示按钮以确认其存在
+                // backToTopButton.classList.add('show');
+            });
+            
+            // 点击按钮时平滑滚动到顶部
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        } else {
+            console.error('Back to top button not found!');
+        }
         
         // 技能条动画功能
         function animateSkillBars() {
