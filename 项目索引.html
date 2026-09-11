@@ -13,38 +13,38 @@
   .container { max-width:1100px; margin:0 auto; padding:32px 24px; }
   .notion-banner { background:#fffbe6; border:1px solid #ffe58f; border-radius:12px; padding:14px 18px; margin-bottom:24px; font-size:14px; color:#614700; }
   .notion-banner a { color:#0f3460; font-weight:700; }
-  .category { margin-bottom:36px; }
-  .category-header { display:flex; align-items:center; gap:10px; margin-bottom:16px; border-left:4px solid #0f3460; padding-left:12px; }
-  .category-header h2 { font-size:20px; font-weight:700; }
+  .cat { margin-bottom:32px; }
+  .cat-h { display:flex; align-items:center; gap:10px; margin-bottom:14px; border-left:4px solid #0f3460; padding-left:12px; }
+  .cat-h h2 { font-size:20px; font-weight:700; }
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
-  .card { background:white; border-radius:14px; padding:18px 20px; box-shadow:0 2px 10px rgba(0,0,0,0.06); transition:transform .15s, box-shadow .15s; }
-  .card:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.12); }
+  .card { background:white; border-radius:14px; padding:18px 20px; box-shadow:0 2px 10px rgba(0,0,0,0.06); }
   .card h3 { font-size:16px; font-weight:700; margin-bottom:4px; color:#1a1a2e; }
   .card .sub { font-size:12px; color:#718096; margin-bottom:12px; }
-  .card .links { display:flex; gap:10px; flex-wrap:wrap; }
-  .card .links a { flex:1; text-align:center; padding:8px 6px; border-radius:8px; font-size:12px; font-weight:600; text-decoration:none; transition:opacity .15s; }
-  .btn-local { background:#2d8659; color:white; }
-  .btn-repo { background:#16213e; color:white; }
-  .btn-dl { background:#0f3460; color:white; }
+  .badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:6px; margin-bottom:10px; }
+  .badge-yes { background:#e6ffed; color:#1a7f37; }
+  .badge-no { background:#fff0e6; color:#b95000; }
+  .card .links { display:flex; gap:8px; flex-wrap:wrap; }
+  .card .links a { flex:1; text-align:center; padding:8px 6px; border-radius:8px; font-size:12px; font-weight:600; text-decoration:none; color:white; }
+  .btn-local { background:#2d8659; }
+  .btn-repo { background:#16213e; }
+  .btn-dl { background:#0f3460; }
   .footer { text-align:center; color:#a0aec0; font-size:12px; padding:24px; }
 </style>
 </head>
 <body>
 <header>
   <h1>爱马仕项目索引</h1>
-  <p>更新于 2026-09-11 ｜ 私有仓库 · 跨设备云端备份</p>
+  <p>更新于 2026-09-11 ｜ 本地 + GitHub 私有仓库 + Notion 三端</p>
 </header>
 <div class="container">
   <div class="notion-banner">
     📌 完整记忆与下载索引见 Notion：<a href="https://app.notion.com/p/3d85d5c1fe98806d9287e841b9523cd9">爱马仕项目记忆库 → GitHub仓库清单</a>
-    （每个项目含 Release 打包 zip 一键下载）
   </div>
-  <div class="category">
-    <div class="category-header"><h2>📦 全部项目（12 个私有仓库）</h2></div>
-    <div class="grid">
+  <div class="cat"><div class="cat-h"><h2>✅ 已备份 GitHub（12 个）</h2></div><div class="grid">
     <div class="card">
       <h3>dezhenglu</h3>
       <div class="sub">个人仓库</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/工具部署备忘" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/dezhenglu" target="_blank" rel="noopener">🌐 仓库</a>
@@ -54,6 +54,7 @@
     <div class="card">
       <h3>hermes-branch-contacts</h3>
       <div class="sub">分局通讯录</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🏛️ 内网与政务系统/分局通讯录" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-branch-contacts" target="_blank" rel="noopener">🌐 仓库</a>
@@ -63,6 +64,7 @@
     <div class="card">
       <h3>hermes-crawler</h3>
       <div class="sub">爬虫项目</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🎬 视频解析与下载/爬虫项目" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-crawler" target="_blank" rel="noopener">🌐 仓库</a>
@@ -72,6 +74,7 @@
     <div class="card">
       <h3>hermes-douyin-parser</h3>
       <div class="sub">抖音解析</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🎬 视频解析与下载/抖音解析" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-douyin-parser" target="_blank" rel="noopener">🌐 仓库</a>
@@ -81,6 +84,7 @@
     <div class="card">
       <h3>hermes-duty-roster</h3>
       <div class="sub">新版值班表</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🏛️ 内网与政务系统/新版值班表" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-duty-roster" target="_blank" rel="noopener">🌐 仓库</a>
@@ -90,6 +94,7 @@
     <div class="card">
       <h3>hermes-finance-control</h3>
       <div class="sub">财务内控复刻</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🏛️ 内网与政务系统/财务" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-finance-control" target="_blank" rel="noopener">🌐 仓库</a>
@@ -99,6 +104,7 @@
     <div class="card">
       <h3>hermes-kuku-server</h3>
       <div class="sub">KuKu服务器</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🎬 视频解析与下载/KuKu服务器" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-kuku-server" target="_blank" rel="noopener">🌐 仓库</a>
@@ -108,6 +114,7 @@
     <div class="card">
       <h3>hermes-online-quiz</h3>
       <div class="sub">在线答题系统</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/📋 在线表单/在线答题系统" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-online-quiz" target="_blank" rel="noopener">🌐 仓库</a>
@@ -117,6 +124,7 @@
     <div class="card">
       <h3>hermes-online-signup</h3>
       <div class="sub">在线报名</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/📋 在线表单/在线报名" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-online-signup" target="_blank" rel="noopener">🌐 仓库</a>
@@ -126,6 +134,7 @@
     <div class="card">
       <h3>hermes-online-survey</h3>
       <div class="sub">在线调查问卷</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/📋 在线表单/在线调查问卷" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-online-survey" target="_blank" rel="noopener">🌐 仓库</a>
@@ -135,6 +144,7 @@
     <div class="card">
       <h3>hermes-police-intranet</h3>
       <div class="sub">内网新警网站</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🏛️ 内网与政务系统/内网新警网站" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-police-intranet" target="_blank" rel="noopener">🌐 仓库</a>
@@ -144,15 +154,143 @@
     <div class="card">
       <h3>hermes-velyo</h3>
       <div class="sub">Velyo (iOS视频下载)</div>
+      <span class="badge badge-yes">已备份 GitHub</span>
       <div class="links">
         <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/📱 移动应用/Velyo" target="_blank" rel="noopener">📂 本地</a>
         <a class="btn-repo" href="https://github.com/Ploveooo/hermes-velyo" target="_blank" rel="noopener">🌐 仓库</a>
         <a class="btn-dl" href="https://github.com/Ploveooo/hermes-velyo/releases/download/v1.0/hermes-velyo-v1.0.zip" target="_blank" rel="noopener">⬇ 下载</a>
       </div>
     </div>
+  </div></div>
+  <div class="cat"><div class="cat-h"><h2>⏳ 未备份（本地有，14 个，问主人是否上传）</h2></div><div class="grid">
+    <div class="card">
+      <h3>gov-web-cms</h3>
+      <div class="sub">🏛️ 内网与政务系统</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🏛️ 内网与政务系统/gov-web-cms" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
     </div>
-  </div>
-  <div class="footer">由 Hermes 自动同步 · GitHub 私有仓库 + Notion 记忆库双备份</div>
+    <div class="card">
+      <h3>分局主页新闻点播模版</h3>
+      <div class="sub">🏛️ 内网与政务系统</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🏛️ 内网与政务系统/分局主页新闻点播模版" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>视频号下载</h3>
+      <div class="sub">🎬 视频解析与下载</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🎬 视频解析与下载/视频号下载" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>CloudflareSpeedTest</h3>
+      <div class="sub">☁️ 工具与基础设施</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/☁️ 工具与基础设施/CloudflareSpeedTest" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>C盘清理</h3>
+      <div class="sub">☁️ 工具与基础设施</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/☁️ 工具与基础设施/C盘清理" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>GCP密钥</h3>
+      <div class="sub">☁️ 工具与基础设施</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/☁️ 工具与基础设施/GCP密钥" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>123机器人</h3>
+      <div class="sub">🤖 AI与机器人</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🤖 AI与机器人/123机器人" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>456暴力回复</h3>
+      <div class="sub">🤖 AI与机器人</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🤖 AI与机器人/456暴力回复" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>RailgunPT签到与抽奖</h3>
+      <div class="sub">🤖 AI与机器人</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🤖 AI与机器人/RailgunPT签到与抽奖" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>context-mode</h3>
+      <div class="sub">🤖 AI与机器人</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🤖 AI与机器人/context-mode" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>reverse-skill</h3>
+      <div class="sub">🤖 AI与机器人</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/🤖 AI与机器人/reverse-skill" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>日常工具</h3>
+      <div class="sub">📦 工具与备忘</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/日常工具" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>论文工具</h3>
+      <div class="sub">📦 工具与备忘</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/论文工具" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>skills</h3>
+      <div class="sub">📦 工具与备忘</div>
+      <span class="badge badge-no">未备份 GitHub</span>
+      <div class="links">
+        <a class="btn-local" href="file:///Users/plove/Desktop/爱马仕项目/skills" target="_blank" rel="noopener">📂 本地</a>
+        <a class="btn-repo" href="#" style="background:#999" onclick="alert('未备份，问主人是否上传');return false;">🌐 待备份</a>
+      </div>
+    </div>
+  </div></div>
+  <div class="footer">由 Hermes 自动同步 · 本地 + GitHub 私有仓库 + Notion 记忆库</div>
 </div>
 </body>
 </html>
